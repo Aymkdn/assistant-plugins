@@ -16,11 +16,11 @@ Allumer la Freebox, aller complètement à gauche dans la section **Réglages**,
 
 Dans le premier onglet vous trouverez le **code télécommande réseau**. Inscrire ce nombre dans le fichier de configuration.
 
-#### `box_to_control`
+### `box_to_control`
 
 Par défaut c'est la box dénommée `hd1` qui est pilotée, mais si vous avez plusieurs box vous pouvez modifier ce paramètre en mettant, par exemple, `hd2`.
 
-#### `search_path`
+### `search_path`
 
 Une des fonctionnalités est la possibilité de se déplacer dans un dossier de la Freebox.
 
@@ -28,7 +28,7 @@ Par exemple, en disant *« OK Google, va dans le dossier Star Trek »*. Il va al
 
 Il est conseillé de réduire la zone de recherche. Par exemple, supposons que vous voulez seulement rechercher parmi vos séries télé qui sont stockées dans `Perso/Mes Séries/`, alors mettre `/Disque dur/Vidéos/Perso/Mes Séries/`.
 
-#### `use_Mon_Bouquet`
+### `use_Mon_Bouquet`
 
 À mettre à `true` si vous souhaitez que le lancement de la télé se fasse dans le menu `Mon Bouquet` (vos chaines favorites) plutôt que dans `Freebox TV`.
 
