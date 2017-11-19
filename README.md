@@ -8,7 +8,7 @@ Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous po
 
 Il s'agit d'un projet personnel que je partage avec la communauté pensant que d'autres cherchent une solution similaire. Si j'ai essayé de proposer quelque chose de simple et modulable, il n'en reste pas moins qu'il faut savoir bidouiller un petit peu. Ne sachant pas la portée que va avoir cet outil, je n'ai pas voulu aller trop loin dans la simplicité. Si je vois une forte demande, je verrai pour simplifier encore un peu plus (en particulier si d'autres plugins sont créés par la communauté).
 
-## Comment ça marche ?
+## ★ Comment ça marche ?
 
 J'ai passé un moment à explorer comment je pouvais faire faire des actions spéciales à mon Google Home Mini. Par exemple, piloter ma Freebox, ou me dire quand les prochains trams arrivent à côté de chez moi. Toutes les solutions trouvées ([Google Actions](https://developers.google.com/actions/), [Sarah v5](https://github.com/NGRP/node-red-contrib-viseo), et autres Node modules) étaient très compliquées : beaucoup de choses à installer, ou qui demandent beaucoup de manipulations, ou avec des contraintes importantes.
 
@@ -38,7 +38,7 @@ La Freebox reçoit l'ordre et s'allume
 
 L'opération peut paraître compliquée, mais elle s'exécute très rapidement et la mise en place est plutôt simple !
 
-## Installation
+## ★ Installation
 
 L'installation passe par quelques étapes, assez faciles et rapides.
 
@@ -70,7 +70,7 @@ L'installation passe par quelques étapes, assez faciles et rapides.
 [assistant] Prêt à écouter les commandes via PushBullet  <-- tout est bon !
 ```
 
-## Configuration
+## ★ Configuration
 
 Trois étapes :
   1. Modifier le fichier `configuration.json`
