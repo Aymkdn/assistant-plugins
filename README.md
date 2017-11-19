@@ -1,5 +1,3 @@
-# EN COURS DE CONSTRUCTION....
-
 # assistant-plugins
 
 Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
@@ -47,7 +45,7 @@ L'installation passe par quelques étapes, assez faciles et rapides.
   Pour les bidouilleurs, vous pouvez donc l'utiliser sur un [RaspBerryPi](https://www.raspberrypi.org/)
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)
-  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine  
+  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/archive/master.zip) sur votre machine  
   → Dézipper le fichier téléchargé  
   5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
   Exemple d'affichage réussi :
