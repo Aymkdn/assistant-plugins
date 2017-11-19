@@ -6,11 +6,11 @@ Ce plugin permet de faire parler son Google Home.
 
 Éditer le fichier `configuration.json` et y indiquer l'adresse IP de votre Google Home.
 
-Cette information peut se trouver sur l'application Google Home de votre téléphone :
+Cette information se trouve sur l'application Google Home de votre téléphone :
 
   1) Ouvrir l'application Google Home
   2) Cliquer sur l'icône en haut à droite (*un téléviseur avec une enceinte*)
-  3) Le Google Home devrait apparaitre
+  3) Votre appareil Google Home devrait apparaitre
   4) Cliquer sur les *trois points* de votre appareil et choisir **Paramètres**
   5) Descendre tout en bas jusqu'à la section **Informations**
   6) Utiliser l'adresse IP qui est donnée (tout en bas normalement)
