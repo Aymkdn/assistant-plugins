@@ -1,0 +1,7 @@
+{
+  "name": "assistant-template",
+  "version": "1.0.0",
+  "description": "Exemple de la structure d'un plugin",
+  "author": "aymkdn",
+  "main":"template.js"
+}
