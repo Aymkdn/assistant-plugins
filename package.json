@@ -1,0 +1,16 @@
+{
+  "name": "assistant-plugins",
+  "version": "1.0.0",
+  "description": "Permet de gérer des plugins avec les Assistants (via IFTTT et Pushbullet)",
+  "main": "index.js",
+  "dependencies": {
+    "castv2-client": "^1.2.0",
+    "google-tts-api": "0.0.2",
+    "promise": "^8.0.1",
+    "pushbullet": "^2.1.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "author": "aymkdn",
+  "license": "MIT"
+}

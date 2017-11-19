@@ -1,0 +1,7 @@
+{
+  "name": "assistant-ifttt",
+  "version": "1.0.0",
+  "description": "Plugin IFTTT pour un Assistant",
+  "author": "aymkdn",
+  "main":"ifttt.js"
+}

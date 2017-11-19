@@ -1,0 +1,7 @@
+{
+  "name": "assistant-freebox",
+  "version": "1.0.0",
+  "description": "Plugin Freebox pour un Assistant",
+  "author": "aymkdn",
+  "main":"freebox.js"
+}

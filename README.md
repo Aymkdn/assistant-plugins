@@ -32,21 +32,16 @@ L'opération peut paraître compliquée, mais elle s'exécute très rapidement !
 
 L'installation passe par quelques étapes, assez simples et rapides.
 
-  1. Installer [NodeJS](https://nodejs.org/en/) sur votre machine qui sera allumée 24h/24 et qui exécutera les actions demandées   
-  NodeJS est disponible sur Windows, Linux et MacOS   
-  Pour les bidouilleurs, vous pouvez donc l'utiliser sur un [RaspBerryPi](https://www.raspberrypi.org/)   
+  1. Installer [NodeJS](https://nodejs.org/en/) sur votre machine qui sera allumée 24h/24 et qui exécutera les actions demandées
+  NodeJS est disponible sur Windows, Linux et MacOS
+  Pour les bidouilleurs, vous pouvez donc l'utiliser sur un [RaspBerryPi](https://www.raspberrypi.org/)
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)
-  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine   
+  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine
   → Dézipper le fichier téléchargé
+  5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)
 
 ## Configuration
-
-Il y a assez peu de configuration à faire.
-  
-L'`assistant-plugins` est fourni avec des plugins pré-integrés que j'utilise pour moi. Typiquement `assistant-tam` ne vous servira pas, puisqu'il s'agit d'un plugin qui me donne le temps d'attente pour le tram qui passe à côté de chez moi sur Montpellier. De même, le plugin `assistant-freebox` ne vous servira que si vous possédez une **Freebox Révolution**.
-
-Une fois dézippé, aller dans le répertoire `assistant-plugins`.
 
 ### Fichier `configuration.json`
 

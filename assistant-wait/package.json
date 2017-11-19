@@ -1,0 +1,7 @@
+{
+  "name": "assistant-wait",
+  "version": "1.0.0",
+  "description": "Plugin Wait pour un Assistant",
+  "author": "aymkdn",
+  "main":"wait.js"
+}

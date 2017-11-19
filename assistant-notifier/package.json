@@ -1,0 +1,7 @@
+{
+  "name": "assistant-notifier",
+  "version": "1.0.0",
+  "description": "Plugin Notifier pour un Assistant",
+  "author": "aymkdn",
+  "main":"notifier.js"
+}

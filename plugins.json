@@ -1,0 +1,9 @@
+{
+  "plugins":[
+    "freebox",
+    "notifier",
+    "ifttt",
+    "wait",
+    "tam"
+  ]
+}
