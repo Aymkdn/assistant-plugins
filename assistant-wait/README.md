@@ -1,4 +1,4 @@
-# assistant-wait
+# Wait
 
 Plugin qui permet d'attendre un délai. S'utilisera avec d'autres plugins ([exemple sur `assistant-ifttt`]()).
 

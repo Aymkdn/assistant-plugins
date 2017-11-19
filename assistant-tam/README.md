@@ -1,4 +1,4 @@
-# assistant-tam
+# TAM
 
 Plugin lié aux transports de Montpellier. Lorsqu'on l'enclenche, le plugin va récupérer l'heure de passage des prochains trams à un arrêt bien précis et les envoyer pour lecture au Google Home.
 

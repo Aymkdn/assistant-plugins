@@ -1,4 +1,4 @@
-# assistant-ifttt
+# IFTTT
 
 Ce plugin permet d'enclencher une action **WebHooks** sur IFTTT.
 

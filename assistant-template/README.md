@@ -1,4 +1,4 @@
-# assistant-template
+# Template
 
 Dans le fichier `template.js` on retrouve la structure minimale à utiliser pour créer un autre plugin.
 
