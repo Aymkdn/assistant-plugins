@@ -12,7 +12,7 @@ Il s'agit d'un projet personnel que je partage avec la communauté pensant que d
 
 J'ai passé un moment à explorer comment je pouvais faire faire des actions spéciales à mon Google Home Mini. Par exemple, piloter ma Freebox, ou me dire quand les prochains trams arrivent à côté de chez moi. Toutes les solutions trouvées ([Google Actions](https://developers.google.com/actions/), [Sarah v5](https://github.com/NGRP/node-red-contrib-viseo), et autres Node modules) étaient très compliquées : beaucoup de choses à installer, ou qui demandent beaucoup de manipulations, ou avec des contraintes importantes.
 
-Certains se plaidront encore que ma solution est trop compliquée : libre à eux d'aller voir ailleurs :-)
+Certains se plaindront encore que ma solution est trop compliquée : libre à eux d'aller voir ailleurs :-)
 
 ### Interconnexions
 
@@ -24,25 +24,59 @@ Plus simple et plus sécurisé : le système va écouter les notifications venan
 
 ### Exemple
 
-Moi: « OK Google, allume la Freebox » → Google: « j'allume la Freebox » (via IFTTT) → Notification à Pushbullet (via IFTTT) → l'ordinateur voit la demande d'action et l'exécute → la Freebox s'allume
+```
+Moi: « OK Google, allume la Freebox »
+                ↓    
+Google: « j'allume la Freebox » (via IFTTT)
+                ↓    
+Notification à Pushbullet (via IFTTT)
+                ↓    
+L'ordinateur voit la demande d'action (via Pushbullet) et l'exécute
+                ↓    
+La Freebox reçoit l'ordre et s'allume 
+```
 
-L'opération peut paraître compliquée, mais elle s'exécute très rapidement !
+L'opération peut paraître compliquée, mais elle s'exécute très rapidement et la mise en place est plutôt simple !
 
 ## Installation
 
-L'installation passe par quelques étapes, assez simples et rapides.
+L'installation passe par quelques étapes, assez faciles et rapides.
 
-  1. Installer [NodeJS](https://nodejs.org/en/) sur votre machine qui sera allumée 24h/24 et qui exécutera les actions demandées
-  NodeJS est disponible sur Windows, Linux et MacOS
+  1. Installer [NodeJS](https://nodejs.org/en/) sur votre machine qui sera allumée 24h/24 et qui exécutera les actions demandées  
+  NodeJS est disponible sur Windows, Linux et MacOS  
   Pour les bidouilleurs, vous pouvez donc l'utiliser sur un [RaspBerryPi](https://www.raspberrypi.org/)
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)
   4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine
-  → Dézipper le fichier téléchargé
+  → Dézipper le fichier téléchargé  
   5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)
+  6. Configurer (voir ci-dessous)
+  7. Double-cliquer sur le fichier `start.bat`  
+  → Une fenêtre va s'ouvrir avec des informations comme celles-ci :  
+```
+[assistant] 5 plugins trouvés.
+[assistant] Chargement du plugin 'freebox'
+[assistant-freebox] Récupération des chaines télé sur free.fr...
+[assistant-freebox] Récupération des chaines sur free.fr terminée !
+[assistant-freebox] Plugin chargé et prêt.
+[assistant] Chargement du plugin 'notifier'
+[assistant-notifier] Plugin chargé et prêt.
+[assistant] Chargement du plugin 'ifttt'
+[assistant-ifttt] Plugin chargé et prêt.
+[assistant] Chargement du plugin 'wait'
+[assistant-wait] Plugin chargé et prêt.
+[assistant] Chargement du plugin 'tam'
+[assistant-wait] Plugin chargé et prêt.
+[assistant] Prêt à écouter les commandes via PushBullet  <-- tout est bon !
+```
 
 ## Configuration
 
+Trois étapes :
+  1. Modifier le fichier `configuration.json`
+  2. Modifier le fichier `plugins.json`
+  3. Configurer chaque plugin
+  
 ### Fichier `configuration.json`
 
 Commencer par se rendre dans les [settings de Pushbullet](https://www.pushbullet.com/#settings) puis cliquer sur `Create Access Token`. Il va alors vous fournir une clé (*token*) qui ressemble à `o.XORwEvj04kFriJ67A3ZYofiudZeYFCzi`.
