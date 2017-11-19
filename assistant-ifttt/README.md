@@ -16,7 +16,7 @@ Se rendre dans le [maker WebHooks de IFTTT](https://ifttt.com/maker_webhooks) et
 
 ## Utilisation
 
-Vous pouvez relier des plugins ensembles en déclencher des actions sur IFTTT.
+Vous pouvez relier des plugins ensembles en déclenchant des actions sur IFTTT.
 
 ### Exemple
 
