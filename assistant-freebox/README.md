@@ -42,36 +42,36 @@ Pour palier à cela, ouvrir le fichier `replace_chaine.json` et s'inspirer des e
 
 ## Utilisation
 
-J'ai créé des applets IFTTT qui sont déjà disponibles. Vous pouvez donc les utiliser. Pour cela, [chercher "Freebox"](https://ifttt.com/search/query/freebox).
+J'ai créé des applets IFTTT qui sont déjà disponibles. Vous pouvez donc les utiliser. Pour cela, [chercher "Freebox" sur IFTTT](https://ifttt.com/search/query/freebox).
 
 Voici les phrases clés à dire — s'assurer d'avoir installé les applets associées :
   - `allume la Freebox` ([https://ifttt.com/applets/qa8rME2N-allume-la-freebox](https://ifttt.com/applets/qa8rME2N-allume-la-freebox)) : allume simplement la Freebox
   - `allume la télé` ([https://ifttt.com/applets/tuKQJrnH-allume-la-tele-via-la-freebox](https://ifttt.com/applets/tuKQJrnH-allume-la-tele-via-la-freebox)) : allume la Freebox (si elle n'est pas allumée) puis va mettre une chaine télé
-  - `allume la télé et zappe sur ...` ([https://ifttt.com/applets/Bj6nH7Xw-allume-la-tele-via-la-freebox-et-zappe-sur-une-chaine](https://ifttt.com/applets/Bj6nH7Xw-allume-la-tele-via-la-freebox-et-zappe-sur-une-chaine)) : allume la Freebox (si elle n'est pas allumée) puis va mettre la chaine de télé demandée
-    Exemples :
-    *OK Google, allume la télé et zappe sur M6*
-    *OK Google, allume la télé et zappe sur la 6*
-  - `éteins la Freebox` ([https://ifttt.com/applets/EEn7LsPJ-eteins-la-freebox](https://ifttt.com/applets/EEn7LsPJ-eteins-la-freebox)) : éteins la Freebox
-  - `zappe sur ...` ([https://ifttt.com/applets/d6B7Yrk5-zappe-sur-une-chaine-de-la-freebox](https://ifttt.com/applets/d6B7Yrk5-zappe-sur-une-chaine-de-la-freebox)) : zappe sur la chaine demandée, et fonctionne aussi avec le numéro de la chaine
-   Exemples :
-    *OK Google, zappe sur TMC*
-    *OK Google, zappe sur la 10*
+  - `allume la télé et zappe sur ...` ([https://ifttt.com/applets/Bj6nH7Xw-allume-la-tele-via-la-freebox-et-zappe-sur-une-chaine](https://ifttt.com/applets/Bj6nH7Xw-allume-la-tele-via-la-freebox-et-zappe-sur-une-chaine)) : allume la Freebox (si elle n'est pas allumée) puis va mettre la chaine de télé demandée   
+    Exemples :  
+    *OK Google, allume la télé et zappe sur M6*  
+    *OK Google, allume la télé et zappe sur la 6*  
+  - `éteins la Freebox` ([https://ifttt.com/applets/EEn7LsPJ-eteins-la-freebox](https://ifttt.com/applets/EEn7LsPJ-eteins-la-freebox)) : pour éteindre la Freebox
+  - `zappe sur ...` ([https://ifttt.com/applets/d6B7Yrk5-zappe-sur-une-chaine-de-la-freebox](https://ifttt.com/applets/d6B7Yrk5-zappe-sur-une-chaine-de-la-freebox)) : zappe sur la chaine demandée, et fonctionne aussi avec le numéro de la chaine  
+   Exemples :  
+    *OK Google, zappe sur TMC*  
+    *OK Google, zappe sur la 10*  
   - `coupe le son de la Freebox` ([https://ifttt.com/applets/kx4Ku7vj-coupe-le-son-de-la-freebox](https://ifttt.com/applets/kx4Ku7vj-coupe-le-son-de-la-freebox))
   - `remets le son de la Freebox` ([https://ifttt.com/applets/S4wcuJn7-remets-le-son-de-la-freebox](https://ifttt.com/applets/S4wcuJn7-remets-le-son-de-la-freebox))
   - `baisse le son de la Freebox` ([https://ifttt.com/applets/WWf3zG58-baisse-le-son-de-la-freebox](https://ifttt.com/applets/WWf3zG58-baisse-le-son-de-la-freebox)) : va baisser le son de 15 barres
-  - `baisse le son de la Freebox de X` ([https://ifttt.com/applets/cbeL79cW-baisse-le-son-de-x-barres-sur-la-freebox](https://ifttt.com/applets/cbeL79cW-baisse-le-son-de-x-barres-sur-la-freebox)) : va baisser le son de X barres
+  - `baisse le son de la Freebox de X` ([https://ifttt.com/applets/cbeL79cW-baisse-le-son-de-x-barres-sur-la-freebox](https://ifttt.com/applets/cbeL79cW-baisse-le-son-de-x-barres-sur-la-freebox)) : va baisser le son de X barres  
    Exemple : *OK Google, baisse le son de la Freebox de 50*
   - `monte le son de la Freebox` ([https://ifttt.com/applets/uCcg6RdE-augmente-le-son-de-la-freebox](https://ifttt.com/applets/uCcg6RdE-augmente-le-son-de-la-freebox)) : va augmenter le son de 15 barres
-  - `monte le son de la Freebox de X` ([https://ifttt.com/applets/UuDGXdmL-augmente-le-son-de-x-barres-sur-la-freebox](https://ifttt.com/applets/UuDGXdmL-augmente-le-son-de-x-barres-sur-la-freebox)) : va augmenter le son de X barres
+  - `monte le son de la Freebox de X` ([https://ifttt.com/applets/UuDGXdmL-augmente-le-son-de-x-barres-sur-la-freebox](https://ifttt.com/applets/UuDGXdmL-augmente-le-son-de-x-barres-sur-la-freebox)) : va augmenter le son de X barres  
     Exemple : *OK Google, augmente le son de la Freebox de 25*
   - `mets la Freebox sur pause` ([https://ifttt.com/applets/N7um4qJU-mets-sur-pause-la-freebox](https://ifttt.com/applets/N7um4qJU-mets-sur-pause-la-freebox)) : met le programme en cours sur pause
   - `remets la Freebox en lecture` ([https://ifttt.com/applets/mHAXMym9-remets-la-freebox-en-lecture](https://ifttt.com/applets/mHAXMym9-remets-la-freebox-en-lecture)) : remet en lecture le programme en cours
   - `reviens au direct` ([https://ifttt.com/applets/zfSALsrD-remets-le-direct-sur-la-freebox](https://ifttt.com/applets/zfSALsrD-remets-le-direct-sur-la-freebox)) : lorsque la Freebox TV a été mise sur pause et qu'on souhaite revenir au direct
   - `va dans Mes Enregistrements` ([https://ifttt.com/applets/KxHGy7vw-va-dans-mes-enregistrements-sur-la-freebox](https://ifttt.com/applets/KxHGy7vw-va-dans-mes-enregistrements-sur-la-freebox)) : pour aller dans le menu "Mes Enregistrements" de la Freebox
   - `va dans Mes Vidéos` ([https://ifttt.com/applets/ZkWauBKi-va-dans-mes-videos-sur-la-freebox](https://ifttt.com/applets/ZkWauBKi-va-dans-mes-videos-sur-la-freebox)) : pour aller dans le menu "Mes Vidéos" de la Freebox
-  - `va dans le dossier ...` ([https://ifttt.com/applets/bbdEPtcx-va-dans-un-dossier-stocke-sur-la-freebox](https://ifttt.com/applets/bbdEPtcx-va-dans-un-dossier-stocke-sur-la-freebox)) : parcourt tous les dossiers définis dans `search_path` (voir la section Configuration ci-dessus) afin de trouver le dossier souhaité
-    Exemples :
-    *OK Google, va dans le dossier Star Trek*
+  - `va dans le dossier ...` ([https://ifttt.com/applets/bbdEPtcx-va-dans-un-dossier-stocke-sur-la-freebox](https://ifttt.com/applets/bbdEPtcx-va-dans-un-dossier-stocke-sur-la-freebox)) : parcourt tous les dossiers définis dans `search_path` (voir la section Configuration ci-dessus) afin de trouver le dossier souhaité  
+    Exemples :  
+    *OK Google, va dans le dossier Star Trek*  
     *OK Google, va dans le dossier The Walking Dead* (il vous faudra prendre votre plus beau accent anglais !)
 
 ## Personnalisation
@@ -133,4 +133,4 @@ Par exemple, supposons que vous avez un enregistrement journalier (disons l'émi
 
 Pour cela vous souhaitez donner la commande : *OK Google, lance le programme Quotidien*
 
-Il faut donc créer une applet IFTTT (comme décrit plus haut) et pour la commande envoyée à Pushbullet vous mettrez : `freebox_enregistrements,wait7000,ok,ok` qui peut se traduire par `Freebox, va dans Mes Enregistrements, puis patiente 7 secondes, et ensuite appuie sur OK puis OK encore une fois`
+Il faut donc créer une applet IFTTT (comme décrit plus haut) et pour la commande envoyée à Pushbullet vous mettrez : `freebox_enregistrements,wait7000,ok,ok` qui peut se traduire par `Freebox, va dans Mes Enregistrements, puis patiente 7 secondes, et ensuite appuie sur OK, puis OK encore une fois`
