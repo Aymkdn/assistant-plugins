@@ -47,11 +47,23 @@ L'installation passe par quelques étapes, assez faciles et rapides.
   Pour les bidouilleurs, vous pouvez donc l'utiliser sur un [RaspBerryPi](https://www.raspberrypi.org/)
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)
-  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine
+  4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/releases) sur votre machine  
   → Dézipper le fichier téléchargé  
-  5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)
+  5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
+  Exemple d'affichage réussi :
+```
+C:\Users\User\Desktop\assistant-plugins\>npm install
+
+> websocket@1.0.25 install C:\Users\User\Desktop\assistant-plugins\node_modules\websocket> (node-gyp rebuild 2> builderror.log) || (exit 0)
+C:\Users\User\Desktop\assistant-plugins\node_modules\websocket>if not defined npm_config_node_gyp (node "C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin\\..\..\node_modules\node-gyp\bin\node-gyp.js" rebuild )  else (node "" rebuild )
+npm WARN assistant-plugins@1.0.0 No repository field.
+
+added 84 packages in 9.452s
+
+C:\Users\User\Desktop\assistant-plugins>
+```
   6. Configurer (voir ci-dessous)
-  7. Double-cliquer sur le fichier `start.bat`  
+  7. Une fois tout configuré, double-cliquer sur le fichier `start.bat`  
   → Une fenêtre va s'ouvrir avec des informations comme celles-ci :  
 ```
 [assistant] 5 plugins trouvés.
