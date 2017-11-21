@@ -1,5 +1,6 @@
 var request = require('request-promise-native');
 var fs = require('fs');
+var path = require('path');
 var PromiseChain = function(arr, fct) {
   var dfd = Promise.resolve();
   var res = arr.map(function(a) {
@@ -118,7 +119,7 @@ AssistantFreebox.prototype.getAuthorization=function() {
                 // on sauvegarde la confiuration dans le fichier configuration.json
                 try {
                   var txt = "{\r\n" + JSON.stringify(_this.config).replace(/,/g, ",\r\n  ").slice(1,-1) + "\r\n}";
-                  fs.writeFileSync(__dirname + '\\configuration.json', txt, 'utf8');
+                  fs.writeFileSync(path.join(__dirname, 'configuration.json'), txt, 'utf8');
                   console.log("[assistant-freebox] Configuration terminée. Vous êtes prêt à utiliser le plugin Freebox.");
                   prom_res();
                 } catch(e) {
