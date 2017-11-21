@@ -4,6 +4,7 @@
     "notifier",
     "ifttt",
     "wait",
+    "tag",
     "tam"
   ]
 }
