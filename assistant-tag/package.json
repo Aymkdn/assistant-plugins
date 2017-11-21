@@ -1,0 +1,7 @@
+{
+  "name": "assistant-tag",
+  "version": "1.0.0",
+  "description": "Plugin TAG (Transport de l'Agglomération Grenobloises) pour un Assistant",
+  "author": "ludomeurillon",
+  "main":"tag.js"
+}
