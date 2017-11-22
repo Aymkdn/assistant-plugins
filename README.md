@@ -2,6 +2,8 @@
 
 Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
 
+*REMARQUE du Mercredi 22 Novembre 2017* : je ne m'attendais pas à une telle visibilité ([article sur UniversFreebox](http://www.universfreebox.com/article/41705/Controler-votre-Freebox-grace-a-Google-Assistant-c-est-desormais-possible)), et du coup à autant de gens qui seraient intéressés... j'essaierai donc de vulgariser un peu plus et de faire des vidéos pour montrer la procédure. Par contre, je ne pourrai pas m'en occuper avant la semaine prochaine (parant en vacances tout à l'heure). Un peu de patience donc :-)
+
 ## Disclaimer
 
 Il s'agit d'un projet personnel que je partage avec la communauté pensant que d'autres cherchent une solution similaire. Si j'ai essayé de proposer quelque chose de simple et modulable, il n'en reste pas moins qu'il faut savoir bidouiller un petit peu. Ne sachant pas la portée que va avoir cet outil, je n'ai pas voulu aller trop loin dans la simplicité. Si je vois une forte demande, je verrai pour simplifier encore un peu plus (en particulier si d'autres plugins sont créés par la communauté).
@@ -47,7 +49,8 @@ L'installation passe par quelques étapes, assez faciles et rapides.
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)
   4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/archive/master.zip) sur votre machine  
   → Dézipper le fichier téléchargé  
-  5. Double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
+  5. Pour Windows, double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
+  Pour MacOS et Linux, ouvrir un console dans le répertoire et taper : `npm install`
   Exemple d'affichage réussi :
 ```
 C:\Users\User\Desktop\assistant-plugins\>npm install
@@ -61,8 +64,10 @@ added 84 packages in 9.452s
 C:\Users\User\Desktop\assistant-plugins>
 ```
   6. Configurer (voir ci-dessous)
-  7. Une fois tout configuré, double-cliquer sur le fichier `start.bat`  
-  → Une fenêtre va s'ouvrir avec des informations comme celles-ci :  
+  7. Une fois tout configuré :  
+  Pour Windows, double-cliquer sur le fichier `start.bat`.
+  Pour MacOS/Linux, ouvrir une console et taper : `node index.js`  
+  → L'affichage va donner :  
 ```
 [assistant] 5 plugins trouvés.
 [assistant] Chargement du plugin 'freebox'

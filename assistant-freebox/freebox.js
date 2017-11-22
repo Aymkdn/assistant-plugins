@@ -1,5 +1,6 @@
 var request = require('request-promise-native');
 var fs = require('fs');
+var path = require('path');
 var PromiseChain = function(arr, fct) {
   var dfd = Promise.resolve();
   var res = arr.map(function(a) {
@@ -118,7 +119,7 @@ AssistantFreebox.prototype.getAuthorization=function() {
                 // on sauvegarde la confiuration dans le fichier configuration.json
                 try {
                   var txt = "{\r\n" + JSON.stringify(_this.config).replace(/,/g, ",\r\n  ").slice(1,-1) + "\r\n}";
-                  fs.writeFileSync(__dirname + '\\configuration.json', txt, 'utf8');
+                  fs.writeFileSync(path.join(__dirname, 'configuration.json'), txt, 'utf8');
                   console.log("[assistant-freebox] Configuration terminée. Vous êtes prêt à utiliser le plugin Freebox.");
                   prom_res();
                 } catch(e) {
@@ -231,15 +232,15 @@ AssistantFreebox.prototype.executeCommand=function(commande) {
       }
       case 'on': { key='power,wait7000'; break; }
       case 'off': { key='power'; break; }
-      case 'tv': { key=(_this.config.use_Mon_Bouquet==false?'home,wait2000,right,left,red,ok,wait4000':'home,wait2000,right,left,red,up,up,up,ok,wait4000'); break; }
+      case 'tv': { key=(_this.config.use_Mon_Bouquet==false?'home,wait3000,right,left,red,ok,wait4000':'home,wait3000,right,left,red,up,up,up,ok,wait4000'); break; }
       /*case 'tvOn': { key='power,wait7000,'+(_this.config.use_Mon_Bouquet==false?'home,right,left,red,ok':'home,right,left,red,up,up,up,ok'); break; }*/
       case 'unmute': { key='mute'; break; }
-      case 'home': { key='home,wait2000,red'; break; }
+      case 'home': { key='home,wait3000,red'; break; }
       case 'back': { key='red'; break; }
       case 'pause': { key='play'; break; }
-      case 'videos': { key='home,wait2000,right,left,red,right,ok'; break; }
+      case 'videos': { key='home,wait3000,right,left,red,right,ok'; break; }
       case 'direct': { key='green,ok'; break; }
-      case 'enregistrements': { key='home,wait2000,right,left,red,up,ok'; break; }
+      case 'enregistrements': { key='home,wait3000,right,left,red,up,ok'; break; }
       case 'soundDown': { key='vol_dec'; break; }
       case 'soundUp': { key='vol_inc'; break; }
       case 'programUp': { key='prgm_inc'; break; }
@@ -266,6 +267,8 @@ AssistantFreebox.prototype.executeCommand=function(commande) {
           if (_this.plugins.notifier) _this.plugins.notifier.action("Le dossier a été trouvé");
           return _this.goToFolder(path);
         })
+      } else {
+        if (_this.plugins.notifier) _this.plugins.notifier.action("Le dossier n'a pas été trouvé");
       }
     })
   }
@@ -304,13 +307,23 @@ AssistantFreebox.prototype.executeCommand=function(commande) {
       } else {
         var url = baseURL + key;
         console.log("[assistant-freebox] Url => "+url);
-        return new Promise(function(p_res) {
+        return new Promise(function(p_res, p_rej) {
           setTimeout(function() {
-            request({url:url}).
-            then(function() { p_res() })
+            request({url:url})
+            .then(function() { p_res() })
+            .catch(function(err) {
+              if (err.response.body.indexOf("You don't have permission to access this file on this server.")) {
+                p_rej("[assistant-freebox] Erreur : le code télécommande fourni ("+_this.config.code_telecommande+") est incorrect !");
+              } else {
+                p_rej("[assistant-freebox] Erreur lors de l'envoie de la commande vers la Freebox => ",err.response.body)
+              }
+            })
           }, (key.slice(0,3)==="vol"?20:500))
         })
       }
+    })
+    .catch(function(err) {
+      console.log(err)
     })
   })
 }
