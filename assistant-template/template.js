@@ -38,7 +38,7 @@ AssistantTemplate.prototype.action = function(commande) {
 exports.init=function(plugins) {
   // on lit le fichier configuration.json
   var configuration = require('./configuration');
-  var assitant = new AssistantTemplate(configuration);
+  var assistant = new AssistantTemplate(configuration);
   return assistant.init(plugins)
   .then(function(resource) {
     console.log("[assistant-template] Plugin chargé et prêt.");
