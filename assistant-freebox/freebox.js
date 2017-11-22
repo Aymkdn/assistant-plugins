@@ -214,12 +214,13 @@ AssistantFreebox.prototype.executeCommand=function(commande) {
   var returnKey = function(cmd) {
     switch(cmd.split(" ")[0]) {
       case 'zappe': {
-        let nom = cmd.replace(/^zappe /,"").replace(/^sur /,"").toLowerCase().replace(/\s(\d)/g,"$1");
+        var nom = cmd.replace(/^zappe /,"").replace(/^sur /,"").toLowerCase().replace(/\s(\d)/g,"$1");
+        var canal;
         // si on a "la#" ça signifie qu'on a appelé un nombre
         if (/la\d+/.test(nom)) {
           key = nom.match(/la(\d+)/)[1].split("").join(",");
         } else {
-          let canal = _this.chaines[nom];
+          canal = _this.chaines[nom];
           if (canal) {
             console.log("[assistant-freebox] Zappe sur "+nom+" ("+canal+")");
             key=canal.split("").join(",")
