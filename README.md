@@ -50,7 +50,7 @@ L'installation passe par quelques étapes, assez faciles et rapides.
   4. Télécharger la dernière version d'[assistant-plugins](https://github.com/Aymkdn/assistant-plugins/archive/master.zip) sur votre machine  
   → Dézipper le fichier téléchargé  
   5. Pour Windows, double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
-  Pour MacOS et Linux, ouvrir un console dans le répertoire et taper : `npm install`
+  Pour MacOS et Linux, ouvrir une console dans le répertoire et taper : `npm install`  
   Exemple d'affichage réussi :
 ```
 C:\Users\User\Desktop\assistant-plugins\>npm install
@@ -65,7 +65,7 @@ C:\Users\User\Desktop\assistant-plugins>
 ```
   6. Configurer (voir ci-dessous)
   7. Une fois tout configuré :  
-  Pour Windows, double-cliquer sur le fichier `start.bat`.
+  Pour Windows, double-cliquer sur le fichier `start.bat`.  
   Pour MacOS/Linux, ouvrir une console et taper : `node index.js`  
   → L'affichage va donner :  
 ```
