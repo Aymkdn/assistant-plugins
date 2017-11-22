@@ -2,7 +2,7 @@
 
 Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
 
-*REMARQUE du Mercredi 22 Novembre 2017* : je ne m'attendais pas à une telle visibilité ([article sur UniversFreebox](http://www.universfreebox.com/article/41705/Controler-votre-Freebox-grace-a-Google-Assistant-c-est-desormais-possible)), et du coup à autant de gens qui seraient intéressés... j'essaierai donc de vulgariser un peu plus et de faire des vidéos pour montrer la procédure. Par contre, je ne pourrai pas m'en occuper avant la semaine prochaine (parant en vacances tout à l'heure). Un peu de patience donc :-)
+**REMARQUE du Mercredi 22 Novembre 2017** : je ne m'attendais pas à une telle visibilité ([article sur UniversFreebox](http://www.universfreebox.com/article/41705/Controler-votre-Freebox-grace-a-Google-Assistant-c-est-desormais-possible)), et du coup à autant de gens qui seraient intéressés... j'essaierai donc de vulgariser un peu plus et de faire des vidéos pour montrer la procédure. Par contre, je ne pourrai pas m'en occuper avant la semaine prochaine (partant en vacances tout à l'heure). Un peu de patience donc :-)
 
 ## Disclaimer
 
