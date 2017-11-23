@@ -8,5 +8,6 @@ Pour configurer la ligne et l'arrêt utilisé pour la récupération des prochai
 
     {
       "ligne": "B",
-      "arret": "palais de justice"
+      "arret": "palais de justice",
+      "dir": 0
     }
