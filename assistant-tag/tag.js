@@ -100,23 +100,28 @@ class AssistantTag {
     action(commande){
         var self= this;
         return this.searchNextRequest().then(function(results){
-            console.log("[assistant-tag] %j results", results.length);
-            console.log("[assistant-tag] %j", results);
             if(!results || !results.length){
                 console.log("[assistant-tag] error");
                 self.notify("Je ne trouve aucun tram...");
                 return;
             }
 
-            if(!results || !results.length || !results.length || !results[1].times || !results[1].times.length){
-                console.log("[assistant-tag] error");
-                self.notify("Je ne trouve aucun tram...");
-            } else {
-                var times = results[0].times;
-                if (results[0].pattern.dir != 1) {
-                    times = results[1].times;
+
+            var nextByDir = [];
+            results.forEach(function(direction){
+                if(!direction.pattern){
+                    return;
                 }
-                var resultText;
+
+                var dirDesc = direction.pattern.desc;
+                var dirId = direction.pattern.dir;
+
+                if(self.configuration.dir && self.configuration.dir != dirId){
+                    return;
+                }
+
+                var times = direction.times;
+                var resultText = "";
                 var midnight = new Date();
                 midnight.setHours(0,0,0,0);
                 var now = new Date();
@@ -130,20 +135,37 @@ class AssistantTag {
                 };
 
                 if(times[0]){
-                    resultText = "dans " + getMinutesFromNow(times[0]) + " minutes";
+                    var nextMinutes = getMinutesFromNow(times[0]);
+                    if(nextMinutes === 0){
+                        resultText += "à l'approche";
+                    } else {
+                        resultText += "dans " + getMinutesFromNow(times[0]) + " minutes";
+                    }
 
                     if(times[1]){
                         resultText += ", puis dans " + getMinutesFromNow(times[1]) + " minutes";
                     }
-
-                    if(times[2]){
-                        resultText += ", et enfin dans " + getMinutesFromNow(times[2]) + " minutes";
-                    }
                 } else {
                     resultText = "Je ne trouve aucun tram...";
                 }
+                nextByDir.push({ dir: dirId, desc: dirDesc, text: resultText});
+            });
 
+            var resultText;
+            if(nextByDir.length > 1) {
+                console.log("[assistant-tag] vous pouvez configurer la direction souhaitée dans configuration.json en utilisant");
+                nextByDir.forEach(function (result) {
+                    console.log("[assistant-tag]    dir: %d pour %s", result.dir, result.desc);
+                });
 
+                var resultText = nextByDir.map(function(result){ return "direction "+ result.desc + " " + result.text; }).join(" et ");
+                console.log("[assistant-tag] result %s", resultText);
+                self.notify(resultText);
+            } else {
+
+            }
+            if(nextByDir.length  === 1) {
+                var resultText = nextByDir[0].text;
                 console.log("[assistant-tag] result %s", resultText);
                 self.notify(resultText);
             }
