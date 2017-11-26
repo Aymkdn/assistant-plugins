@@ -1,8 +1,7 @@
 {
   "plugins":[
-    "freebox",
     "notifier",
     "ifttt",
-    "wait"
+     "sncf"
   ]
 }
