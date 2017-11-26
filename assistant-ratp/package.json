@@ -1,0 +1,7 @@
+{
+  "name": "assistant-ratp",
+  "version": "1.0.0",
+  "description": "Plugin RATP pour un Assistant",
+  "author": "rwahl",
+  "main":"ratp.js"
+}
