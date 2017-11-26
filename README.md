@@ -1,3 +1,5 @@
+**NOTE DU Dimanche 26 Novembre 2017 vers 18h30** : je suis en train de tout réorganiser pour une nouvelle structure... Un peu de patience !
+
 # assistant-plugins
 
 Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
