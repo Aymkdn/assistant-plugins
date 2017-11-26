@@ -2,6 +2,8 @@
   "plugins":[
     "notifier",
     "ifttt",
-     "sncf"
+     "sncf",
+     "ratp",
+     "wait"
   ]
 }
