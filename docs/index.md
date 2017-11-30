@@ -29,6 +29,8 @@ L'opération peut paraître compliquée, mais elle s'exécute très rapidement e
 
 ## ★ Installation
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gmt4tIPH_fk?rel=0" frameborder="0" allowfullscreen></iframe>
+  
 L'installation passe par quelques étapes :
 
   1. Installer [NodeJS](https://nodejs.org/en/) sur une machine qui sera allumée 24h/24, qui exécutera les actions demandées et qui doit se trouver sur votre réseau local  
