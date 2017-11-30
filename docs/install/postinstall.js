@@ -27,6 +27,7 @@ for (var plugin in dependencies) {
     } catch(err) {}
   }
 }
+console.log("[assistant] Installation terminée.")
 
 // on écrit le fichier configuration.json
 var path = require("path");

@@ -47,7 +47,7 @@ L'installation passe par quelques étapes :
     
   7. Pour Windows, double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
   Pour MacOS et Linux, ouvrir une console dans le répertoire et taper :  
-  `npm install --loglevel error`  
+  `npm install --loglevel error && npm run-script postinstall`  
   8. Il est maintenant temps de configurer (voir ci-dessous)  
     
   9. Une fois tout configuré :  
