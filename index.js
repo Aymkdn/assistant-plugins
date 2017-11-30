@@ -23,7 +23,7 @@ exports.start = function(dirname) {
       saveConfig:function(plugin, config) {
         if (plugin && config) {
           var configuration = require(path.join(dirname,'configuration'));
-          configuration[plugin] = config;
+          configuration.plugins[plugin] = config;
           var jsonfile = require('jsonfile');
           jsonfile.writeFile(path.join(dirname, 'configuration.json'), configuration, {spaces: 2, EOL: '\r\n'}, function(err) {
             if (err) console.error("[assistant-"+plugin+"] Erreur lors de la sauvegarde de la configuration : "+err);
