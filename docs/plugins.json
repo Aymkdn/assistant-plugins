@@ -1,0 +1,24 @@
+{
+  "data":[
+    {
+      "name":"freebox",
+      "url":"https://github.com/Aymkdn/assistant-freebox",
+      "description":"Permet de commander sa Freebox Révolution"
+    },
+    {
+      "name":"notifier",
+      "url":"https://github.com/Aymkdn/assistant-notifier",
+      "description":"Permet de faire parler le Google Home"
+    },
+    {
+      "name":"ifttt",
+      "url":"https://github.com/Aymkdn/assistant-ifttt",
+      "description":"Permet de lancer des commandes WebHooks sur IFTTT"
+    },
+    {
+      "name":"wait",
+      "url":"https://github.com/Aymkdn/assistant-wait",
+      "description":"Permet de faire une pause avant l'exécution d'une commande"
+    }
+  ]
+}
