@@ -1,7 +1,0 @@
-{
-  "name": "assistant-tam",
-  "version": "1.0.0",
-  "description": "Plugin TAM (Transport de l'Agglomération de Montpellier) pour un Assistant",
-  "author": "aymkdn",
-  "main":"tam.js"
-}

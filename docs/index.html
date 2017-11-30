@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-<title>assistant-plugins | Des plugins pour les Assistant (comme Google Home / Google Assistant)</title>
+<title>assistant-plugins | Des plugins pour les Assistants (comme Google Home / Google Assistant)</title>
 <meta property="og:title" content="assistant-plugins" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Des plugins pour les Assistant (comme Google Home / Google Assistant)" />
@@ -21,20 +21,34 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">assistant-plugins</h1>
-      <h2 class="project-tagline">Des plugins pour les Assistant (comme Google Home / Google Assistant)</h2>
-      
-        <a href="https://github.com/Aymkdn/assistant-plugins" class="btn">View on GitHub</a>
-      
-      
+      <h2 class="project-tagline">Des plugins pour les Assistants (comme Google Home / Google Assistant)</h2>
+        <a href="https://github.com/Aymkdn/assistant-plugins" class="btn project-url">View on GitHub</a>
     </section>
-
     <section class="main-content">
-
-
-
-      <footer class="site-footer">
-          <span class="site-footer-owner"><a href="https://github.com/Aymkdn/assistant-plugins">assistant-plugins</a> is maintained by <a href="https://github.com/Aymkdn">Aymkdn</a>.</span>
-      </footer>
+      <div id="contenu">Chargement...</div>
     </section>
+
+    <script type="text/x-template" id="vue-plugins-selection-template">
+      <ul style="list-style:none">
+        <li v-for="plugin in store.state.plugins">
+          <label><input type="checkbox" :value="plugin.name" v-model="plugin.selected"> Plugin "<strong>{{ plugin.name }}</strong>"</label>
+          <div><em>{{ plugin.description }}</em> (<a :href="'?plugin='+plugin.name" target="_blank">en savoir plus</a>)</div>
+        </li>
+      </ul>
+    </script>
+
+    <script type="text/x-template" id="vue-plugins-template">
+      <ul>
+        <li v-for="plugin in store.state.plugins">
+          Plugin "<strong>{{ plugin.name }}</strong>" : <a :href="'?plugin='+plugin.name" target="_blank">lire la documentation</a>
+        </li>
+      </ul>
+    </script>
+
+    <script type="text/javascript" src="https://unpkg.com/vue" data-tmp="@2.5.8/dist/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vuex" data-tmp="@3.0.1/dist/vuex.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/marked"></script>
+    <script type="text/javascript" src="js/jszip.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

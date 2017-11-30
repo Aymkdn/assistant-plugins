@@ -1,0 +1,17 @@
+{
+  "name": "assistant-plugins-project",
+  "version": "2.0.0",
+  "description": "Utilisé pour gérer le project",
+  "main": "index.js",
+  "repository": "https://github.com/Aymkdn/assistant-plugins",
+  "private":true,
+  "dependencies": {
+    "jsonfile": "^4.0.0",
+    "assistant-plugins": "latest"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js"
+  },
+  "author": "aymkdn",
+  "license": "MIT"
+}
