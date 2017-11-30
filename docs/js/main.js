@@ -115,7 +115,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
       document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
     }
   }
-  return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true")
+  return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now());
 })
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
