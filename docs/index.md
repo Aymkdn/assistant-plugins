@@ -40,7 +40,7 @@ L'installation passe par quelques étapes :
     
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)  
     
-  4. Sélectionner les plugins que vous vous utiliser :  
+  4. Sélectionner les plugins que vous vous utiliser (*si vous cherchez seulement à piloter la Freebox, vous n'avez pas besoin d'installer les autres plugins*) :  
   <vue-plugins-selection></vue-plugins-selection>  
     
   5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br><button type="button" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
