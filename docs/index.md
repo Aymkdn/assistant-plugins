@@ -4,6 +4,8 @@ Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous po
 
 > Annonce de la version 2.0 : https://github.com/Aymkdn/assistant-plugins/wiki/Version-2.0
 
+> Consulter [le changelog](https://github.com/Aymkdn/assistant-plugins/blob/master/changelog.md) pour connaitre les dernières mises à jour.
+
 ## ★ Comment ça marche ?
 
 J'ai passé un moment à explorer comment je pouvais faire faire des actions spéciales à mon Google Home Mini. Par exemple, piloter ma Freebox, ou me dire quand les prochains trams arrivent à côté de chez moi. Toutes les solutions trouvées ([Google Actions](https://developers.google.com/actions/), [Sarah v5](https://github.com/NGRP/node-red-contrib-viseo), et autres Node modules) étaient très compliquées : beaucoup de choses à installer, ou qui demandent beaucoup de manipulations, ou avec des contraintes importantes.
@@ -98,7 +100,7 @@ Certains plugins peuvent nécessiter une configuration. Pour cela, se reporter a
 
 # Comment mettre à jour ?
 
-Pour la suite, si vous voulez mettre à jour le programme et les plugins, **arrêter le programme** , puis lancer le fichier `update.bat` pour Windows, et pour MacOS/Linux taper la commande : `npm update` dans le répertoire courant.
+Pour la suite, pour mettre à jour le programme et les plugins, il faut **arrêter le programme** , puis lancer le fichier `update.bat` pour Windows, et pour MacOS/Linux taper la commande : `npm update` dans le répertoire courant.
 
 Et enfin, **redémarrer le programme**.
 
