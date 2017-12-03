@@ -37,7 +37,7 @@ var appVue = new Vue({
       var _this=this;
       var pluginsSelected = store.state.plugins.filter(function(plugin) { return plugin.selected });
       var zip = new JSZip();
-      var files = [ "index.js", "postinstall.js", "install.bat", "start.bat"];
+      var files = [ "index.js", "postinstall.js", "install.bat", "start.bat", "update.bat"];
       _this.download.text = "Téléchargement...";
       // on récupère le package.json et on y ajoute les plugins choisis
       request(repoURL+'install/package.json?timestamp='+Date.now())
