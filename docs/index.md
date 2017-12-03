@@ -98,7 +98,9 @@ Certains plugins peuvent nécessiter une configuration. Pour cela, se reporter a
 
 # Comment mettre à jour ?
 
-Pour la suite, si vous voulez mettre à jour le programme et les plugins, vous pouvez lancer le fichier `update.bat` pour Windows, et pour MacOS/Linux taper la commande : `npm update` dans le répertoire courant.
+Pour la suite, si vous voulez mettre à jour le programme et les plugins, **arrêter le programme** , puis lancer le fichier `update.bat` pour Windows, et pour MacOS/Linux taper la commande : `npm update` dans le répertoire courant.
+
+Et enfin, **redémarrer le programme**.
 
 # Comment faire son propre plugin ?
 
