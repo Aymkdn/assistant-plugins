@@ -94,54 +94,54 @@ function request(url) {
 
 // on récupère la page sur Github
 var pageURL = repoURL+'index.md';
-var isMain = true;
-// si on souhaite afficher la page d'un plugin
-if (window.location.search.indexOf("?plugin=") !== -1) {
-  var plugin = window.location.search.slice(8);
-  plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
-  if (plugin.length>0 && plugin[0].url) {
-    isMain = false;
-    pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md'
-    document.querySelector('.project-name').innerHTML = "Plugin '"+plugin[0].name+"'";
-    document.querySelector('.project-tagline').innerHTML = plugin[0].description;
-    document.querySelector('.project-url').href = plugin[0].url;
-    document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
+var onePlugin = (window.location.search.indexOf("?plugin=") !== -1);
+// on lit plugins.json
+request(repoURL+'plugins.json?timestamp='+Date.now())
+.then(function(responseText) {
+  var json = JSON.parse(responseText);
+  store.state.plugins=json.data.map(function(plugin) { plugin.selected=false; plugin.version=false; return plugin });
+  store.state.plugins.sort(function(a, b) {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+  if (onePlugin) {
+    var requestedPlugin = window.location.search.slice(8);
+    store.state.plugins=store.state.plugins.filter(function(plugin) { return plugin.name === requestedPlugin })
   }
-}
-request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now())
+  // puis on cherche à trouver la version pour chacun
+  return PromiseChain(store.state.plugins, function(plugin) {
+    var u = plugin.url.replace(/github.com/,"raw.githubusercontent.com")+'/master/package.json';
+    return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(u)+"&direct=true&timestamp="+Date.now())
+    .then(function(responseText) {
+      var json = JSON.parse(responseText);
+      var name = plugin.name;
+      store.state.plugins.filter(function(p) { return p.name === name })[0].version=json.version;
+    })
+    .catch(function(err) {
+      console.log("erreur lorsque je cherche la version du plugin "+plugin.name);
+    })
+  });
+})
+.then(function() {
+  // si on souhaite afficher la page d'un plugin
+  if (onePlugin) {
+    var plugin = window.location.search.slice(8);
+    plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
+    if (plugin.length>0 && plugin[0].url) {
+      isMain = false;
+      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md'
+      document.querySelector('.project-name').innerHTML = "Plugin '"+plugin[0].name+"'";
+      document.querySelector('.project-tagline').innerHTML = plugin[0].description;
+      document.querySelector('.project-url').href = plugin[0].url;
+      document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
+    }
+  }
+  return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now())
+})
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
   appVue.$mount('#contenu');
-})
-.then(function() {
-  if (isMain) {
-    // on lit plugins.json
-    return request(repoURL+'plugins.json?timestamp='+Date.now())
-  } else return false;
-})
-.then(function(responseText) {
-  if (responseText !== false) {
-    var json = JSON.parse(responseText);
-    store.state.plugins=json.data.map(function(plugin) { plugin.selected=false; plugin.version=false; return plugin });
-    store.state.plugins.sort(function(a, b) {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-    // puis on cherche à trouver la version pour chacun
-    PromiseChain(store.state.plugins, function(plugin) {
-      var u = plugin.url.replace(/github.com/,"raw.githubusercontent.com")+'/master/package.json';
-      return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(u)+"&direct=true&timestamp="+Date.now())
-      .then(function(responseText) {
-        var json = JSON.parse(responseText);
-        var name = plugin.name;
-        store.state.plugins.filter(function(p) { return p.name === name })[0].version=json.version;
-      })
-      .catch(function(err) {
-        console.log("erreur lorsque je cherche la version du plugin "+plugin.name);
-      })
-    });
-  }
 })
 .catch(function() {
   document.querySelector('#contenu').innerHTML = 'Erreur lors du chargement du contenu. La page peut être vue à cette adresse : <a href="'+pageURL+'">'+pageURL+'</a>';
