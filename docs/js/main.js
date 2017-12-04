@@ -3,6 +3,8 @@
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
 var saveAs=saveAs||function(e){"use strict";if(typeof e==="undefined"||typeof navigator!=="undefined"&&/MSIE [1-9]\./.test(navigator.userAgent)){return}var t=e.document,n=function(){return e.URL||e.webkitURL||e},r=t.createElementNS("http://www.w3.org/1999/xhtml","a"),o="download"in r,a=function(e){var t=new MouseEvent("click");e.dispatchEvent(t)},i=/constructor/i.test(e.HTMLElement)||e.safari,f=/CriOS\/[\d]+/.test(navigator.userAgent),u=function(t){(e.setImmediate||e.setTimeout)(function(){throw t},0)},s="application/octet-stream",d=1e3*40,c=function(e){var t=function(){if(typeof e==="string"){n().revokeObjectURL(e)}else{e.remove()}};setTimeout(t,d)},l=function(e,t,n){t=[].concat(t);var r=t.length;while(r--){var o=e["on"+t[r]];if(typeof o==="function"){try{o.call(e,n||e)}catch(a){u(a)}}}},p=function(e){if(/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(e.type)){return new Blob([String.fromCharCode(65279),e],{type:e.type})}return e},v=function(t,u,d){if(!d){t=p(t)}var v=this,w=t.type,m=w===s,y,h=function(){l(v,"writestart progress write writeend".split(" "))},S=function(){if((f||m&&i)&&e.FileReader){var r=new FileReader;r.onloadend=function(){var t=f?r.result:r.result.replace(/^data:[^;]*;/,"data:attachment/file;");var n=e.open(t,"_blank");if(!n)e.location.href=t;t=undefined;v.readyState=v.DONE;h()};r.readAsDataURL(t);v.readyState=v.INIT;return}if(!y){y=n().createObjectURL(t)}if(m){e.location.href=y}else{var o=e.open(y,"_blank");if(!o){e.location.href=y}}v.readyState=v.DONE;h();c(y)};v.readyState=v.INIT;if(o){y=n().createObjectURL(t);setTimeout(function(){r.href=y;r.download=u;a(r);h();c(y);v.readyState=v.DONE});return}S()},w=v.prototype,m=function(e,t,n){return new v(e,t||e.name||"download",n)};if(typeof navigator!=="undefined"&&navigator.msSaveOrOpenBlob){return function(e,t,n){t=t||e.name||"download";if(!n){e=p(e)}return navigator.msSaveOrOpenBlob(e,t)}}w.abort=function(){};w.readyState=w.INIT=0;w.WRITING=1;w.DONE=2;w.error=w.onwritestart=w.onprogress=w.onwrite=w.onabort=w.onerror=w.onwriteend=null;return m}(typeof self!=="undefined"&&self||typeof window!=="undefined"&&window||this.content);if(typeof module!=="undefined"&&module.exports){module.exports.saveAs=saveAs}else if(typeof define!=="undefined"&&define!==null&&define.amd!==null){define("FileSaver.js",function(){return saveAs})}
 
+function PromiseChain(n,r){var e=Promise.resolve(),i=n.map(function(n){return e=e.then(function(){return r(n)})});return Promise.all(i)}
+
 var repoURL = "https://raw.githubusercontent.com/Aymkdn/assistant-plugins/master/docs/";
 
 // Vue
@@ -90,37 +92,57 @@ function request(url) {
   })
 }
 
-// on lit plugins.json
-request(repoURL+'plugins.json?timestamp='+Date.now())
-.then(function(responseText) {
-  var json = JSON.parse(responseText);
-  store.state.plugins=json.data.map(function(plugin) { plugin.selected=false; return plugin });
-  store.state.plugins.sort(function(a, b) {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
-})
-.then(function() { // on récupère la page sur Github
-  var pageURL = repoURL+'index.md';
-  // si on souhaite afficher la page d'un plugin
-  if (window.location.search.indexOf("?plugin=") !== -1) {
-    var plugin = window.location.search.slice(8);
-    plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
-    if (plugin.length>0 && plugin[0].url) {
-      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md'
-      document.querySelector('.project-name').innerHTML = "Plugin '"+plugin[0].name+"'";
-      document.querySelector('.project-tagline').innerHTML = plugin[0].description;
-      document.querySelector('.project-url').href = plugin[0].url;
-      document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
-    }
+// on récupère la page sur Github
+var pageURL = repoURL+'index.md';
+var isMain = true;
+// si on souhaite afficher la page d'un plugin
+if (window.location.search.indexOf("?plugin=") !== -1) {
+  var plugin = window.location.search.slice(8);
+  plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
+  if (plugin.length>0 && plugin[0].url) {
+    isMain = false;
+    pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md'
+    document.querySelector('.project-name').innerHTML = "Plugin '"+plugin[0].name+"'";
+    document.querySelector('.project-tagline').innerHTML = plugin[0].description;
+    document.querySelector('.project-url').href = plugin[0].url;
+    document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
   }
-  return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now());
-})
+}
+request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now())
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
   appVue.$mount('#contenu');
 })
+.then(function() {
+  if (isMain) {
+    // on lit plugins.json
+    return request(repoURL+'plugins.json?timestamp='+Date.now())
+  } else return false;
+})
+.then(function(responseText) {
+  if (responseText !== false) {
+    var json = JSON.parse(responseText);
+    store.state.plugins=json.data.map(function(plugin) { plugin.selected=false; plugin.version=false; return plugin });
+    store.state.plugins.sort(function(a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+    // puis on cherche à trouver la version pour chacun
+    PromiseChain(store.state.plugins, function(plugin) {
+      var u = plugin.url.replace(/github.com/,"raw.githubusercontent.com")+'/master/package.json';
+      return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(u)+"&direct=true&timestamp="+Date.now())
+      .then(function(responseText) {
+        var json = JSON.parse(responseText);
+        var name = plugin.name;
+        store.state.plugins.filter(function(p) { return p.name === name })[0].version=json.version;
+      })
+      .catch(function(err) {
+        console.log("erreur lorsque je cherche la version du plugin "+plugin.name);
+      })
+    });
+  }
+})
 .catch(function() {
-  document.querySelector('#contenu').innerHTML = "Erreur lors du chargement du contenu.";
+  document.querySelector('#contenu').innerHTML = 'Erreur lors du chargement du contenu. La page peut être vue à cette adresse : <a href="'+pageURL+'">'+pageURL+'</a>';
 })

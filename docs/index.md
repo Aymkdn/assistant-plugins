@@ -47,7 +47,7 @@ L'installation passe par quelques étapes :
   4. Sélectionner les plugins que vous vous utiliser (*si vous cherchez seulement à piloter la **Freebox**, vous n'avez pas besoin d'installer les autres plugins*) :  
   <vue-plugins-selection></vue-plugins-selection>  
     
-  5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br><button type="button" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
+  5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br><button type="button" class="button ui" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
     
   6. Dézipper le fichier qui vient d'être téléchargé, puis se rendre dans le dossier `assistant-plugins`  
     

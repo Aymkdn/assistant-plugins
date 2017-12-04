@@ -30,18 +30,20 @@
 
     <script type="text/x-template" id="vue-plugins-selection-template">
       <ul style="list-style:none">
-        <li v-for="plugin in store.state.plugins">
-          <label><input type="checkbox" :value="plugin.name" v-model="plugin.selected"> Plugin "<strong>{{ plugin.name }}</strong>"</label>
+        <li v-for="plugin in store.state.plugins" v-if="store.state.plugins.length > 0">
+          <label><input type="checkbox" :value="plugin.name" v-model="plugin.selected"> Plugin "<strong>{{ plugin.name }}</strong>" <template v-if="plugin.version">(v{{ plugin.version }})</template></label>
           <div><em>{{ plugin.description }}</em> (<a :href="'?plugin='+plugin.name" target="_blank">en savoir plus</a>)</div>
         </li>
+        <li v-else>Chargement des plugins en cours...</li>
       </ul>
     </script>
 
     <script type="text/x-template" id="vue-plugins-template">
       <ul>
-        <li v-for="plugin in store.state.plugins">
-          Plugin "<strong>{{ plugin.name }}</strong>" : <a :href="'?plugin='+plugin.name" target="_blank">lire la documentation</a>
+        <li v-for="plugin in store.state.plugins" v-if="store.state.plugins.length > 0">
+          Plugin "<strong>{{ plugin.name }}" <template v-if="plugin.version">(v{{ plugin.version }})</template></strong> : <a :href="'?plugin='+plugin.name" target="_blank">lire la documentation</a>
         </li>
+        <li v-else>Chargement des plugins en cours...</li>
       </ul>
     </script>
 
