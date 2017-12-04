@@ -40,10 +40,13 @@ exports.start = function(dirname) {
         addons.push(plugin.slice(10));
       }
     }
+    var packageCurrent = require(path.join(dirname,'/node_modules/assistant-plugins/package'));
+    console.log("[assistant] Assistant v"+packageCurrent.version+" : Chargement en cours...");
     console.log("[assistant] "+addons.length+" plugin"+(addons.length>1?"s":"")+" trouvé"+(addons.length>1?"s":"")+".");
 
     PromiseChain(addons, function(plugin) {
-      console.log("[assistant] Chargement du plugin '"+plugin+"'");
+      var packagePlugin = require(path.join(dirname,'/node_modules/assistant-'+plugin+'/package'));
+      console.log("[assistant] Chargement du plugin '"+plugin+"' (v"+packagePlugin.version+")");
       return require(path.join(dirname,'/node_modules/assistant-'+plugin)).init(configuration.plugins[plugin], plugins)
       .then(function(resource) {
         plugins[plugin] = resource;

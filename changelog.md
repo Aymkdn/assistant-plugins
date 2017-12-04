@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.2 (4 Décembre 2017)**
+
+  - Ajout du numéro de version des différents plugins dans la console d'affichage
+
 **Change Log v2.0.1 (2 Décembre 2017)**
 
   - Ajout de `update.bat` et changement des explications pour mettre à jour
