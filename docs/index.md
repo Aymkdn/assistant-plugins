@@ -118,8 +118,10 @@ Voici les étapes à suivre :
 
   1) Ouvrir une console dans le répertoire où vous avez installé le programme, puis taper la commande:  
   `npm install pm2 -g`  
-  2) Pour les utilisateurs de Windows, taper en plus la commande :  
+  2) Pour les utilisateurs de Windows, taper la commande :  
   `npm install pm2-windows-startup -g && pm2-startup install`  
+  Pour les utilisateurs de Linux/MacOS, taper la commande :  
+  `pm2 startup`  
   3) Maintenant on va démarrer notre programme avec la commande :  
   `pm2 start index.js`  
   4) Puis on sauvegarde avec la commande :  
