@@ -108,9 +108,9 @@ Et enfin, **redémarrer le programme**.
 
 Si vous savez programmer en JavaScript, et avez quelques notions de NodeJS/npm, c'est assez simple : [en savoir plus](https://github.com/Aymkdn/assistant-template)
 
-# Lancer le programme au démarrage
+# Lancer le programme au démarrage et en arrière-plan
 
-Pour les **utilisateurs plus avancées**, vous pouvez configurer le programme pour qu'il se lance au démarrage de votre machine.  
+Pour les **utilisateurs plus avancées**, vous pouvez configurer le programme pour qu'il se lance au démarrage de votre machine et en arrière-plan sur votre machine.  
 
 Je vous invite à utiliser [pm2](http://pm2.keymetrics.io/), que je vais rapidement expliquer.  
 
