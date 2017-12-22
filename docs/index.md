@@ -2,8 +2,6 @@
 
 Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
 
-> Annonce de la version 2.0 : https://github.com/Aymkdn/assistant-plugins/wiki/Version-2.0
-
 > Consulter [le changelog](https://github.com/Aymkdn/assistant-plugins/blob/master/changelog.md) pour connaitre les dernières mises à jour.
 
 ## ★ Comment ça marche ?
