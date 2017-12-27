@@ -70,6 +70,8 @@ L'installation passe par quelques étapes :
         [assistant] Prêt à écouter les commandes via PushBullet
         ```
 
+Un problème ? Consulter [la FAQ](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).
+
 ## ★ Configuration
 
 Tout se passe dans le fichier `configuration.json` qui contient toutes les éléments à configurer.
@@ -91,10 +93,14 @@ Ouvrir le fichier `configuration.json` dans un éditeur de texte puis fournir le
 }
 ```
 
+Un problème ? Consulter [la FAQ](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).
+
 ### Configuration des Plugins
 
 Certains plugins peuvent nécessiter une configuration. Pour cela, se reporter au site Web de chaque plugin :
 <vue-plugins></vue-plugins>
+
+Un problème ? Consulter [la FAQ](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).
 
 # Comment mettre à jour ?
 
