@@ -142,6 +142,11 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
   appVue.$mount('#contenu');
+
+  // si on a un hash dans l'URL on se déplace vers lui
+  setTimeout(
+    function() { if (window.location.hash) window.location.hash=window.location.hash }
+  }, 300);
 })
 .catch(function() {
   document.querySelector('#contenu').innerHTML = 'Erreur lors du chargement du contenu. La page peut être vue à cette adresse : <a href="'+pageURL+'">'+pageURL+'</a>';

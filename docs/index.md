@@ -33,10 +33,10 @@ L'opération peut paraître compliquée, mais elle s'exécute très rapidement e
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gmt4tIPH_fk?rel=0" frameborder="0" allowfullscreen></iframe>
   
-L'installation passe par quelques étapes :
+L'installation passe par quelques étapes (si vous avez un **RaspberryPi**, [voir cette page dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi)) :
 
   1. Installer [NodeJS](https://nodejs.org/en/) sur une machine qui sera allumée 24h/24, qui exécutera les actions demandées et qui doit se trouver sur votre réseau local  
-  À noter que NodeJS est disponible sur Windows, Linux/RaspberryPi et MacOS  
+  À noter que NodeJS est disponible sur Windows, Linux, MacOS et RaspberryPi  
     
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)  
     
