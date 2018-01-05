@@ -132,4 +132,16 @@ Voici les étapes à suivre :
   `pm2 save`  
   5) Redémarrer la machine pour constater que cela fonctionne
   
-Une fois que le programme est lancé en arrière plan, il faudra utiliser la commande `pm2 monit` pour voir les logs du programme.
+Si vous avez besoin de faire des modifications (changement de configuration, ajout d'un plugin, etc.), assurez-vous de **relancer le programme via pm2** :
+```bash
+# on liste tous les programmes lancés via pm2
+pm2 list
+# on repère celui d'assistant-plugins (probablement le seul de la liste)
+# son ID est sûrement 0... on l'arrête
+pm2 stop 0
+# on peut modifier le fichier de configuration, ajouter de nouveaux plugins, etc.
+# puis on le relance
+pm2 start 0
+```
+  
+Une fois que le programme est lancé en arrière plan, il faudra utiliser la commande `pm2 monit` pour voir **les logs du programme**.
