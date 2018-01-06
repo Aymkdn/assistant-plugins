@@ -37,6 +37,7 @@ L'installation passe par quelques étapes (si vous avez un **RaspberryPi**, [voi
 
   1. Installer [NodeJS](https://nodejs.org/en/) sur une machine qui sera allumée 24h/24, qui exécutera les actions demandées et qui doit se trouver sur votre réseau local  
   À noter que NodeJS est disponible sur Windows, Linux, MacOS et RaspberryPi  
+  → Pour les utilisateurs de Linux, s'assurer que vous avez une version supérieure à la 8.x.x de NodeJS d'installé.  
     
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)  
     
