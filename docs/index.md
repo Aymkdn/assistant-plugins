@@ -118,6 +118,7 @@ Si vous savez programmer en JavaScript, et avez quelques notions de NodeJS/npm, 
 Pour les **utilisateurs plus avancées**, vous pouvez configurer le programme pour qu'il se lance au démarrage de votre machine et en arrière-plan sur votre machine.  
 
 Je vous invite à utiliser [pm2](http://pm2.keymetrics.io/), que je vais rapidement expliquer.  
+Pour RaspberryPi, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi#8-mettre-en-t%C3%A2che-de-fond-optionnel).  
 
 Voici les étapes à suivre :
 
@@ -126,7 +127,7 @@ Voici les étapes à suivre :
   2) Pour les utilisateurs de Windows, taper la commande :  
   `npm install pm2-windows-startup -g && pm2-startup install`  
   Pour les utilisateurs de Linux/MacOS, taper la commande :  
-  `pm2 startup`  
+  `sudo pm2 startup`  
   3) Maintenant on va démarrer notre programme avec la commande :  
   `pm2 start index.js`  
   4) Puis on sauvegarde avec la commande :  
