@@ -33,10 +33,12 @@ L'opération peut paraître compliquée, mais elle s'exécute très rapidement e
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gmt4tIPH_fk?rel=0" frameborder="0" allowfullscreen></iframe>
   
-L'installation passe par quelques étapes (si vous avez un **RaspberryPi**, [voir cette page dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi)) :
+L'installation passe par quelques étapes.  
+Si vous avez un **RaspberryPi**, [voir cette page dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi).  
+Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-Synology).
 
   1. Installer [NodeJS](https://nodejs.org/en/) sur une machine qui sera allumée 24h/24, qui exécutera les actions demandées et qui doit se trouver sur votre réseau local  
-  À noter que NodeJS est disponible sur Windows, Linux, MacOS et RaspberryPi  
+  À noter que NodeJS est disponible sur Windows, Linux et MacOS.  
   → Pour les utilisateurs de Linux, s'assurer que vous avez une version supérieure à la 8.x.x de NodeJS d'installé.  
     
   2. Créer un compte sur [IFTTT](http://www.ifttt.com/) (c'est gratuit)  
@@ -118,7 +120,8 @@ Si vous savez programmer en JavaScript, et avez quelques notions de NodeJS/npm, 
 Pour les **utilisateurs plus avancées**, vous pouvez configurer le programme pour qu'il se lance au démarrage de votre machine et en arrière-plan sur votre machine.  
 
 Je vous invite à utiliser [pm2](http://pm2.keymetrics.io/), que je vais rapidement expliquer.  
-Pour RaspberryPi, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi#8-mettre-en-t%C3%A2che-de-fond-optionnel).  
+Pour **RaspberryPi**, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi#8-mettre-en-t%C3%A2che-de-fond-optionnel).  
+Pour **Synology**, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-Synology#8-lancer-le-programme-au-d%C3%A9marrage).
 
 Voici les étapes à suivre :
 
