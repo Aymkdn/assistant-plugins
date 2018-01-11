@@ -35,3 +35,6 @@
   text-shadow: none;
   background-image: none;
 }
+ul > li > label + div {
+  margin-left: 15px;
+}
