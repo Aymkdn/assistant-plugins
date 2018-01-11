@@ -29,6 +29,11 @@
       "name":"temperature-local",
       "url":"https://github.com/Aymkdn/assistant-temperature-local",
       "description":"Permet de récupérer la température moyenne des stations Netatmo dans une zone définie"
+    },
+    {
+      "name":"transport-montpellier",
+      "url":"https://github.com/Aymkdn/assistant-transport-montpellier",
+      "description":"Permet de savoir quand les prochains trams/bus passent à un arrêt à Montpellier"
     }
   ]
 }
