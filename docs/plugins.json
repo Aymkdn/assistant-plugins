@@ -19,6 +19,16 @@
       "name":"wait",
       "url":"https://github.com/Aymkdn/assistant-wait",
       "description":"Permet de faire une pause avant l'exécution d'une commande"
+    },
+    {
+      "name":"launch",
+      "url":"https://github.com/Aymkdn/assistant-launch",
+      "description":"Permet de lancer un programme sur la machine hôte"
+    },
+    {
+      "name":"temperature-local",
+      "url":"https://github.com/Aymkdn/assistant-temperature-local",
+      "description":"Permet de récupérer la température moyenne des stations Netatmo dans une zone définie"
     }
   ]
 }
