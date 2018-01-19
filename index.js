@@ -58,6 +58,7 @@ exports.start = function(dirname) {
       // les commandes envoyées sont de type KEYWORD_ACTION1|KEYWORD_ACTION2|...
       var stream = pusher.stream();
       stream.connect();
+      stream.on('error', function(error) { console.log("[assistant-plugins] Erreur de connexion avec PushBullet: ",error) });
       stream.on('tickle', function(tickle) {
         if (tickle==="push") {
           pusher.history({limit:1}, function(error, response) {

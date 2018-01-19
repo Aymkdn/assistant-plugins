@@ -14,18 +14,8 @@ Après toutes ces recherches, j'ai décidé d'utiliser [IFTTT](http://www.ifttt.
 
 ### Schéma exemple
 
-Voici concrètement comment cela fonctionne :
-```
-Moi: « OK Google, allume la Freebox »
-                ↓    
-Google: « j'allume la Freebox » (via IFTTT)
-                ↓    
-Notification à Pushbullet (via IFTTT)
-                ↓    
-L'ordinateur voit la demande d'action (via Pushbullet) et l'exécute
-                ↓    
-La Freebox reçoit l'ordre et s'allume 
-```
+Voici concrètement comment cela fonctionne avec un exemple :
+![schema](https://user-images.githubusercontent.com/946315/35142776-a087b06e-fcff-11e7-98b1-c1ce7613ed13.png)
 
 L'opération peut paraître compliquée, mais elle s'exécute très rapidement et la mise en place est plutôt simple !
 
