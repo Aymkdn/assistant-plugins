@@ -19,13 +19,14 @@
     <link rel="stylesheet" href="css/jekyll.css">
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">assistant-plugins</h1>
-      <h2 class="project-tagline">Des plugins pour les Assistants (comme Google Home / Google Assistant)</h2>
-        <a href="https://github.com/Aymkdn/assistant-plugins" class="btn project-url">View on GitHub</a>
+    <section class="page-header" id="header" v-cloak>
+      <h1 class="project-name" v-if="true"><template v-if="!store.state.isPlugin">assistant-plugins</template><template v-else>Plugin '{{ store.state.plugins[0].name }}' <template v-if="store.state.plugins[0].version">(v{{ store.state.plugins[0].version }})</template></template></h1>
+      <h1 class="project-name header-loading" v-else>Chargement...</h1>
+      <h2 class="project-tagline"><template v-if="!store.state.isPlugin">Des plugins pour les Assistants (comme Google Home / Google Assistant)</template><template v-else>{{ store.state.plugins[0].description }}</template></h2>
+        <a :href="store.state.isPlugin ? store.state.plugins[0].url : 'https://github.com/Aymkdn/assistant-plugins'" class="btn project-url">View on GitHub</a>
     </section>
     <section class="main-content">
-      <div id="contenu">Chargement...</div>
+      <div id="contenu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-eclipse" style="width:20px;height:20px"><path d="M10 50a40 40 0 0 0 80 0 40 45 0 0 1-80 0" fill="#0055a5"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 52.5;360 50 52.5" keyTimes="0;1" dur="1.1s" begin="0s" repeatCount="indefinite"/></path></svg> Chargement...</div>
     </section>
 
     <script type="text/x-template" id="vue-plugins-selection-template">

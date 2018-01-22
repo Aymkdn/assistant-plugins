@@ -10,10 +10,12 @@ var repoURL = "https://raw.githubusercontent.com/Aymkdn/assistant-plugins/master
 // Vue
 var store = new Vuex.Store({
   state: {
-    plugins:[]
+    plugins:[],
+    isPlugin:false
   }
 })
-var appVue = new Vue({
+var headerVue = new Vue().$mount('#header');
+var contentVue = new Vue({
   data:{
     download:{
       text:"Télécharger",
@@ -110,7 +112,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
     store.state.plugins=store.state.plugins.filter(function(plugin) { return plugin.name === requestedPlugin })
   }
   // puis on cherche à trouver la version pour chacun
-  return PromiseChain(store.state.plugins, function(plugin) {
+  PromiseChain(store.state.plugins, function(plugin) {
     var u = plugin.url.replace(/github.com/,"raw.githubusercontent.com")+'/master/package.json';
     return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(u)+"&direct=true&timestamp="+Date.now())
     .then(function(responseText) {
@@ -129,11 +131,8 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
     var plugin = window.location.search.slice(8);
     plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
     if (plugin.length>0 && plugin[0].url) {
-      isMain = false;
-      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md'
-      document.querySelector('.project-name').innerHTML = "Plugin '"+plugin[0].name+"'";
-      document.querySelector('.project-tagline').innerHTML = plugin[0].description;
-      document.querySelector('.project-url').href = plugin[0].url;
+      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md';
+      store.state.isPlugin=true;
       document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
     }
   }
@@ -141,7 +140,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
 })
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
-  appVue.$mount('#contenu');
+  contentVue.$mount('#contenu');
 
   // si on a un hash dans l'URL on se déplace vers lui
   setTimeout(
