@@ -14,6 +14,23 @@ exports.start = function(dirname) {
     return Promise.all(res)
   }
 
+  // pour éviter l'erreur "Action failure message: Account has not been used for over a month" on envoie des messages régulièrement à PushBullet
+  function awakePushBullet() {
+    pusher.devices(function(error, response) {
+      var assistantDevice = response.devices.filter(function(device) { return device.nickname === "assistant-plugins" });
+      // on regarde si un "device" pour assistant-plugins existe, sinon on le crée
+      if (assistantDevice.length===0) {
+        pusher.createDevice({nickname:'assistant-plugins'}, function(error, response) {});
+      } else {
+        pusher.note(assistantDevice[0].iden, 'Note', 'Pour éviter la désactivation du compte par PushBullet', function(error, response) {
+          pusher.dismissPush(response.iden, function(error, response) {
+            pusher.deletePush(response.iden, function(error, response) {})
+          });
+        });
+      }
+    });
+  }
+
   if (!configuration.main.pushbullet_token) {
     console.log("[assistant] Erreur : vous devez configurer le token de PushBullet");
   } else {
@@ -54,6 +71,8 @@ exports.start = function(dirname) {
     })
     .then(function() {
       console.log("[assistant] Prêt à écouter les commandes via PushBullet");
+      awakePushBullet();
+      setInterval(awakePushBullet, 86400000); // toutes les 24h
       // on écoute les notifications qui viennent de IFTTT via PushBullet
       // les commandes envoyées sont de type KEYWORD_ACTION1|KEYWORD_ACTION2|...
       var stream = pusher.stream();
