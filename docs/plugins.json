@@ -6,6 +6,11 @@
       "description":"Permet de commander sa Freebox Révolution"
     },
     {
+      "name":"livebox",
+      "url":"https://github.com/Aymkdn/assistant-livebox",
+      "description":"Permet de commander sa Livebox"
+    },
+    {
       "name":"notifier",
       "url":"https://github.com/Aymkdn/assistant-notifier",
       "description":"Permet de faire parler le Google Home"
