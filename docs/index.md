@@ -35,7 +35,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
     
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)  
     
-  4. Sélectionner les plugins que vous vous utiliser (*si vous cherchez **seulement** à piloter la **Freebox**, vous **N'avez PAS** besoin d'installer les autres plugins*) :  
+  4. Sélectionner les plugins que vous vous utiliser :  
   <vue-plugins-selection></vue-plugins-selection>  
     
   5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br><button type="button" class="button ui" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
