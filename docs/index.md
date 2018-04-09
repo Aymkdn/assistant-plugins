@@ -1,6 +1,6 @@
 # assistant-plugins
 
-Vous utilisez un Assistant, comme Google Home / Google Assistant ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
+Vous utilisez un Assistant, comme Google Home/Assistant, Cortana, Alexa ? Alors vous pouvez étendre ses possibilités grâce à cet outil qui utilise la puissance de [IFTTT](http://www.ifttt.com/).
 
 > Consulter [le changelog](https://github.com/Aymkdn/assistant-plugins/blob/master/changelog.md) pour connaitre les dernières mises à jour.
 
