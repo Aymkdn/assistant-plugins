@@ -46,7 +46,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
   Pour **MacOS** ([voir la vidéo](https://youtu.be/r3y8X66Hnng)) et **Linux**, ouvrir une console dans le répertoire et taper :  
   `npm install --loglevel error && npm run-script postinstall`  
   8. Un fichier `configuration.json` a dû apparaitre à la fin de l'installation.  
-  Il est donc maintenant temps de configurer (voir [section Configuration plus bas)[#-configuration]])  
+  Il est donc maintenant temps de configurer (voir [section Configuration plus bas](#-configuration)])  
     
   9. Une fois tout configuré :  
   Pour **Windows**, double-cliquer sur le fichier `start.bat`  
