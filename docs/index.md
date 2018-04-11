@@ -35,7 +35,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
     
   3. Créer un compte sur [Pushbullet](https://www.pushbullet.com/) (c'est gratuit)  
     
-  4. Sélectionner les plugins que vous vous utiliser :  
+  4. Sélectionner les plugins que vous voulez installer :  
   <vue-plugins-selection></vue-plugins-selection>  
     
   5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br><button type="button" class="button ui" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
@@ -46,7 +46,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
   Pour MacOS ([voir la vidéo](https://youtu.be/r3y8X66Hnng)) et Linux, ouvrir une console dans le répertoire et taper :  
   `npm install --loglevel error && npm run-script postinstall`  
   8. Un fichier `configuration.json` a dû apparaitre à la fin de l'installation.  
-  Il est donc maintenant temps de configurer (voir ci-dessous)  
+  Il est donc maintenant temps de configurer (voir [section Configuration plus bas)[#-configuration]])  
     
   9. Une fois tout configuré :  
   Pour Windows, double-cliquer sur le fichier `start.bat`  
@@ -110,16 +110,16 @@ Si vous savez programmer en JavaScript, et avez quelques notions de NodeJS/npm, 
 Pour les **utilisateurs plus avancées**, vous pouvez configurer le programme pour qu'il se lance au démarrage de votre machine et en arrière-plan sur votre machine.  
 
 Je vous invite à utiliser [pm2](http://pm2.keymetrics.io/), que je vais rapidement expliquer.  
-Pour **RaspberryPi**, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi#8-mettre-en-t%C3%A2che-de-fond-optionnel).  
+Pour **RaspberryPi**, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-RaspberryPi#8-lancer-au-red%C3%A9marrage).  
 Pour **Synology**, se reporter à la [documentation dédiée](https://github.com/Aymkdn/assistant-plugins/wiki/Installation-de-assistant-plugins-sur-Synology#8-lancer-le-programme-au-d%C3%A9marrage).
 
 Voici les étapes à suivre :
 
   1) Ouvrir une console dans le répertoire où vous avez installé le programme, puis taper la commande:  
   `npm install pm2 -g`  
-  2) Pour les utilisateurs de Windows, taper la commande :  
+  2) Pour les utilisateurs de **Windows**, taper la commande :  
   `npm install pm2-windows-startup -g && pm2-startup install`  
-  Pour les utilisateurs de Linux/MacOS, taper la commande :  
+  Pour les utilisateurs de **Linux/MacOS**, taper la commande :  
   `sudo pm2 startup`  
   3) Maintenant on va démarrer notre programme avec la commande :  
   `pm2 start index.js`  
