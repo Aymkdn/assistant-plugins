@@ -42,15 +42,15 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
     
   6. Dézipper le fichier qui vient d'être téléchargé, puis se rendre dans le dossier `assistant-plugins`  
     
-  7. Pour Windows, double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
-  Pour MacOS ([voir la vidéo](https://youtu.be/r3y8X66Hnng)) et Linux, ouvrir une console dans le répertoire et taper :  
+  7. Pour **Windows**, double-cliquer sur le fichier `install.bat` (une fenêtre va s'ouvrir et va essayer de télécharger les packages associés)   
+  Pour **MacOS** ([voir la vidéo](https://youtu.be/r3y8X66Hnng)) et **Linux**, ouvrir une console dans le répertoire et taper :  
   `npm install --loglevel error && npm run-script postinstall`  
   8. Un fichier `configuration.json` a dû apparaitre à la fin de l'installation.  
   Il est donc maintenant temps de configurer (voir [section Configuration plus bas)[#-configuration]])  
     
   9. Une fois tout configuré :  
-  Pour Windows, double-cliquer sur le fichier `start.bat`  
-  Pour MacOS/Linux, ouvrir une console et taper : `node index.js`  
+  Pour **Windows**, double-cliquer sur le fichier `start.bat`  
+  Pour **MacOS/Linux**, ouvrir une console et taper : `node index.js`  
   → L'affichage va donner quelque chose comme :  
         ```
         [assistant] 2 plugins trouvés.
