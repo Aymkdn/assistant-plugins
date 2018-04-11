@@ -2,17 +2,17 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-<title>assistant-plugins | Des plugins pour les Assistants (comme Google Home / Google Assistant)</title>
+<title>assistant-plugins | Des plugins pour les Assistants (Google Home, Cortana, Alexa, ...)</title>
 <meta property="og:title" content="assistant-plugins" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Des plugins pour les Assistant (comme Google Home / Google Assistant)" />
-<meta property="og:description" content="Des plugins pour les Assistant (comme Google Home / Google Assistant)" />
+<meta name="description" content="Des plugins pour les Assistant (Google Home, Cortana, Alexa, ...)" />
+<meta property="og:description" content="Des plugins pour les Assistant (Google Home, Cortana, Alexa, ...)" />
 <link rel="canonical" href="https://aymkdn.github.io/assistant-plugins/" />
 <meta property="og:url" content="https://aymkdn.github.io/assistant-plugins/" />
 <meta property="og:site_name" content="assistant-plugins" />
 <script type="application/ld+json">
-{"name":"assistant-plugins","description":"Des plugins pour les Assistant (comme Google Home / Google Assistant)","author":"Aymkdn","@type":"WebSite","url":"https://aymkdn.github.io/assistant-plugins/","image":null,"publisher":null,"headline":"assistant-plugins","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
-    <meta name="description" content="Des plugins pour les Assistant (comme Google Home / Google Assistant)"/>
+{"name":"assistant-plugins","description":"Des plugins pour les Assistant (Google Home, Cortana, Alexa, ...)","author":"Aymkdn","@type":"WebSite","url":"https://aymkdn.github.io/assistant-plugins/","image":null,"publisher":null,"headline":"assistant-plugins","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <meta name="description" content="Des plugins pour les Assistant (Google Home, Cortana, Alexa, ...)"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -22,7 +22,7 @@
     <section class="page-header" id="header" v-cloak>
       <h1 class="project-name" v-if="true"><template v-if="!store.state.isPlugin">assistant-plugins</template><template v-else>Plugin '{{ store.state.plugins[0].name }}' <template v-if="store.state.plugins[0].version">(v{{ store.state.plugins[0].version }})</template></template></h1>
       <h1 class="project-name header-loading" v-else>Chargement...</h1>
-      <h2 class="project-tagline"><template v-if="!store.state.isPlugin">Des plugins pour les Assistants (comme Google Home / Google Assistant)</template><template v-else>{{ store.state.plugins[0].description }}</template></h2>
+      <h2 class="project-tagline"><template v-if="!store.state.isPlugin">Des plugins pour les Assistants (Google Home, Cortana, Alexa, ...)</template><template v-else>{{ store.state.plugins[0].description }}</template></h2>
         <a :href="store.state.isPlugin ? store.state.plugins[0].url : 'https://github.com/Aymkdn/assistant-plugins'" class="btn project-url">View on GitHub</a>
     </section>
     <section class="main-content">
