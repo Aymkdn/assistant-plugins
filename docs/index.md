@@ -140,3 +140,7 @@ pm2 start 0
 ```
   
 Une fois que le programme est lancé en arrière plan, il faudra utiliser la commande `pm2 monit` pour voir **les logs du programme**.
+
+# Faire un don
+
+Certaines personnes ont souhaité me faire un don pour me remercier du travail fourni. Si c'est votre cas, vous pouvez le faire via [paypal.me/aymkdn](https://paypal.me/aymkdn). **Merci !**
