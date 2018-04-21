@@ -17,14 +17,16 @@ exports.start = function(dirname) {
   // pour éviter l'erreur "Action failure message: Account has not been used for over a month" on envoie des messages régulièrement à PushBullet
   function awakePushBullet() {
     pusher.devices(function(error, response) {
+      if (!response) return;
       var assistantDevice = response.devices.filter(function(device) { return device.nickname === "assistant-plugins" });
       // on regarde si un "device" pour assistant-plugins existe, sinon on le crée
       if (assistantDevice.length===0) {
         pusher.createDevice({nickname:'assistant-plugins'}, function(error, response) {});
       } else {
         pusher.note(assistantDevice[0].iden, 'Note', 'Pour éviter la désactivation du compte par PushBullet', function(error, response) {
+          if (!response) return;
           pusher.dismissPush(response.iden, function(error, response) {
-            pusher.deletePush(response.iden, function(error, response) {})
+            if (response) pusher.deletePush(response.iden, function(error, response) {})
           });
         });
       }
