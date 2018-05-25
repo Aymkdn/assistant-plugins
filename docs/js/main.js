@@ -131,7 +131,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
     var plugin = window.location.search.slice(8);
     plugin = store.state.plugins.filter(function(p) { return p.name === plugin });
     if (plugin.length>0 && plugin[0].url) {
-      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md';
+      pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md?timestamp='+Date.now();
       store.state.isPlugin=true;
       document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
     }
