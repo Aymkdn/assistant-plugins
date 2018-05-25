@@ -39,7 +39,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
   <vue-plugins-selection></vue-plugins-selection>  
     
   5. Cliquer sur le bouton pour télécharger `assistant-plugins` sur votre machine :<br>
-  <button type="button" class="button ui" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
+  &lt;button type="button" class="button ui" @click="downloadStart" :disabled="download.disabled">{{ download.text }}</button>  
     
   6. Dézipper le fichier qui vient d'être téléchargé, puis se rendre dans le dossier `assistant-plugins`  
     
