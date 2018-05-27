@@ -44,6 +44,11 @@
       "name":"bluetooth",
       "url":"https://github.com/Aymkdn/assistant-bluetooth",
       "description":"Permet de connecter Google Home à une enceinte Bluetooth"
+    },
+    {
+      "name":"control-windows",
+      "url":"https://github.com/Aymkdn/assistant-control-windows",
+      "description":"Permet de contrôler l'ordinateur sous Windows où est installé assistant-plugin"
     }
   ]
 }
