@@ -41,16 +41,16 @@ ul > li > label + div {
   margin-left: 15px;
 }
 
-/* pour assistant-freebox */
-#contenu.freebox #utilisation + p + p + ul > li > p {
+/* pour assistant-freebox et assistant-livebox */
+#contenu.freebox #utilisation + p + p + ul > li > p,#contenu.livebox #utilisation + p + p + ul > li > p {
   margin-bottom: 0;
 }
-#contenu.freebox #utilisation + p + p + ul > li {
+#contenu.freebox #utilisation + p + p + ul > li,#contenu.livebox #utilisation + p + p + ul > li {
   margin-top: 15px;
 }
-#contenu.freebox #utilisation + p + p + ul > li code:before {
+#contenu.freebox #utilisation + p + p + ul > li code:before,#contenu.livebox #utilisation + p + p + ul > li code:before {
   content: '« ';
 }
-#contenu.freebox #utilisation + p + p + ul > li code::after {
+#contenu.freebox #utilisation + p + p + ul > li code::after,#contenu.livebox #utilisation + p + p + ul > li code::after {
   content: ' »';
 }
