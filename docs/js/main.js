@@ -78,7 +78,10 @@ var contentVue = new Vue({
   created:function() {
     this.$nextTick(function() {
       if (window.location.hash) {
-        document.querySelector(window.location.hash).scrollIntoView()
+        setTimeout(function() {
+          var el = document.querySelector(window.location.hash);
+          if (el) el.scrollIntoView()
+        }, 1000)
       }
     })
   }
