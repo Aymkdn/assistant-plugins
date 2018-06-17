@@ -42,9 +42,9 @@ ul > li > label + div {
 }
 
 /* pour assistant-freebox */
-#contenu.freebox > ul > li > p {
+#contenu.freebox #utilisation + p + p + ul > li > p {
   margin-bottom: 0;
 }
-#contenu.freebox > ul > li {
+#contenu.freebox #utilisation + p + p + ul > li {
   margin-top: 15px;
 }
