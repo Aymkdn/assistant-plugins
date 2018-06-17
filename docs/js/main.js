@@ -78,8 +78,7 @@ var contentVue = new Vue({
   created:function() {
     this.$nextTick(function() {
       if (window.location.hash) {
-        console.log(window.location.hash)
-        window.location.hash=window.location.hash
+        document.querySelector(window.location.hash).scrollIntoView()
       }
     })
   }
