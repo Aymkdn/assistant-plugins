@@ -48,3 +48,9 @@ ul > li > label + div {
 #contenu.freebox #utilisation + p + p + ul > li {
   margin-top: 15px;
 }
+#contenu.freebox #utilisation + p + p + ul > li code:before {
+  content: '« ';
+}
+#contenu.freebox #utilisation + p + p + ul > li code::after {
+  content: ' »';
+}
