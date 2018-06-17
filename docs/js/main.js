@@ -74,6 +74,14 @@ var contentVue = new Vue({
         _this.download.text="Télécharger";
       });
     }
+  },
+  created:function() {
+    this.$nextTick(function() {
+      if (window.location.hash) {
+        console.log(window.location.hash)
+        window.location.hash=window.location.hash
+      }
+    })
   }
 });
 
@@ -142,11 +150,6 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
 .then(function(responseText) {
   document.querySelector('#contenu').innerHTML = marked(responseText).replace(/(\\{\\{[^\\]+\\}\\})/g,function(match, p1, p2, p3, offset, string) { return '<span v-pre>'+p1.replace(/\\{/g,'{').replace(/\\}/g,'}')+'</span>' });
   contentVue.$mount('#contenu');
-
-  // si on a un hash dans l'URL on se déplace vers lui
-  setTimeout(
-    function() { if (window.location.hash) window.location.hash=window.location.hash }
-  , 1000);
 })
 .catch(function() {
   document.querySelector('#contenu').innerHTML = 'Erreur lors du chargement du contenu. La page peut être vue à cette adresse : <a href="'+pageURL+'">'+pageURL+'</a>';
