@@ -146,7 +146,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
   // si on a un hash dans l'URL on se déplace vers lui
   setTimeout(
     function() { if (window.location.hash) window.location.hash=window.location.hash }
-  , 300);
+  , 1000);
 })
 .catch(function() {
   document.querySelector('#contenu').innerHTML = 'Erreur lors du chargement du contenu. La page peut être vue à cette adresse : <a href="'+pageURL+'">'+pageURL+'</a>';
