@@ -134,7 +134,7 @@ request(repoURL+'plugins.json?timestamp='+Date.now())
       pageURL = plugin[0].url.replace(/github.com/,"raw.githubusercontent.com")+'/master/README.md?timestamp='+Date.now();
       store.state.isPlugin=true;
       document.querySelector('.page-header').style.backgroundImage = "linear-gradient(120deg, #155799, #993a15)";
-      document.querySelector('#contenu').className = plugin.name;
+      document.querySelector('#contenu').className = plugin[0].name;
     }
   }
   return request("https://github-proxy.kodono.info/?q="+encodeURIComponent(pageURL)+"&direct=true&timestamp="+Date.now())
