@@ -64,6 +64,7 @@ exports.start = function(dirname) {
     console.log("[assistant] "+addons.length+" plugin"+(addons.length>1?"s":"")+" trouvé"+(addons.length>1?"s":"")+".");
 
     PromiseChain(addons, function(plugin) {
+      plugin = plugin.trim();
       var packagePlugin = require(path.join(dirname,'/node_modules/assistant-'+plugin+'/package'));
       console.log("[assistant] Chargement du plugin '"+plugin+"' (v"+packagePlugin.version+")");
       return require(path.join(dirname,'/node_modules/assistant-'+plugin)).init(configuration.plugins[plugin], plugins)
@@ -83,22 +84,26 @@ exports.start = function(dirname) {
       stream.on('tickle', function(tickle) {
         if (tickle==="push") {
           pusher.history({limit:1}, function(error, response) {
-            response.pushes.forEach(function(push) {
-              if (push.sender_name === "IFTTT" && push.title === "Assistant" && !push.dismissed) {
-                var commandes = push.body.split("|");
-                console.log("[assistant] Commande reçue: ",commandes);
-                PromiseChain(commandes, function(commande) {
-                  // on regarde le keyword et on transmet au plug associé
-                  var plugin = commande.split("_")[0];
-                  if (!plugins[plugin]) {
-                    console.log("[assistant] Erreur : la commande « "+commande+" » a été reçue, cependant le plugin '"+plugin+"' n'a pas été chargé !");
-                  } else {
-                    console.log("[assistant] Appelle du plugin '"+plugin+"'");
-                    return plugins[plugin].action(commande.split("_").slice(1).join("_"));
-                  }
-                })
-              }
-            })
+            if (error) {
+              console.log("[assistant-plugins] Erreur retournée par PushBullet: ",error);
+            } else {
+              response.pushes.forEach(function(push) {
+                if (push.sender_name === "IFTTT" && push.title === "Assistant" && !push.dismissed) {
+                  var commandes = push.body.split("|");
+                  console.log("[assistant] Commande reçue: ",commandes);
+                  PromiseChain(commandes, function(commande) {
+                    // on regarde le keyword et on transmet au plug associé
+                    var plugin = commande.split("_")[0];
+                    if (!plugins[plugin]) {
+                      console.log("[assistant] Erreur : la commande « "+commande+" » a été reçue, cependant le plugin '"+plugin+"' n'a pas été chargé !");
+                    } else {
+                      console.log("[assistant] Appelle du plugin '"+plugin+"'");
+                      return plugins[plugin].action(commande.split("_").slice(1).join("_"));
+                    }
+                  })
+                }
+              })
+            }
           })
         }
       })

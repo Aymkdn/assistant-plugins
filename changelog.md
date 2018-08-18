@@ -1,5 +1,10 @@
 # Changelog
 
+**Change Log v2.0.5 (18 Août 2018)**
+
+  - Ajout de la vérification d'erreur retournée par PushBullet
+  - Ajout d'un `trim` sur la commande plugin pour éviter ce genre de problème : https://github.com/Aymkdn/assistant-plugins/issues/161#issuecomment-412852497
+
 **Change Log v2.0.4 (21 Avril 2018)**
 
   - Correction d'un bug mineur
