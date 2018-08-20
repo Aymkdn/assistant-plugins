@@ -97,7 +97,7 @@ exports.start = function(dirname) {
                     if (!plugins[plugin]) {
                       console.log("[assistant] Erreur : la commande « "+commande+" » a été reçue, cependant le plugin '"+plugin+"' n'a pas été chargé !");
                     } else {
-                      console.log("[assistant] Appelle du plugin '"+plugin+"'");
+                      console.log("[assistant] Appel du plugin '"+plugin+"'");
                       return plugins[plugin].action(commande.split("_").slice(1).join("_"));
                     }
                   })
