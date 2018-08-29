@@ -49,6 +49,11 @@
       "name":"control-windows",
       "url":"https://github.com/Aymkdn/assistant-control-windows",
       "description":"Permet de contrôler l'ordinateur sous Windows où est installé assistant-plugin"
+    },
+    {
+      "name":"yamaha",
+      "url":"https://github.com/tapsystem/assistant-yamaha",
+      "description":"Permet de contrôler un ampli / receiver Yamaha"
     }
   ]
 }
