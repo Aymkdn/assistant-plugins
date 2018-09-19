@@ -63,7 +63,7 @@ Si vous avez un **Synology**, [voir cette page dédiée](https://github.com/Aymk
         [assistant] Prêt à écouter les commandes via PushBullet
         ```
 
-<pre class="important">Un problème ou une question ? Consulte [cette page d'aide](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).</pre>
+<pre class="important">Un problème ou une question ? Consulte <a href="https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes">cette page d'aide</a>.</pre>
 
 ## ★ Configuration
 
@@ -86,14 +86,14 @@ Ouvrir le fichier `configuration.json` dans un éditeur de texte puis fournir le
 }
 ```
 
-<pre class="important">Un problème ou une question ? Consulte [cette page d'aide](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).</pre>
+<pre class="important">Un problème ou une question ? Consulte <a href="https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes">cette page d'aide</a>.</pre>
 
 ### Configuration des Plugins
 
 Certains plugins peuvent nécessiter une configuration. Pour cela, se reporter au site Web de chaque plugin :
 <vue-plugins></vue-plugins>
 
-<pre class="important">Un problème ou une question ? Consulte [cette page d'aide](https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes).</pre>
+<pre class="important">Un problème ou une question ? Consulte <a href="https://github.com/Aymkdn/assistant-plugins/wiki/Questions-Fr%C3%A9quentes">cette page d'aide</a>.</pre>
 
 # Comment mettre à jour ?
 
