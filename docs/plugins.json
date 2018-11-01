@@ -54,6 +54,11 @@
       "name":"yamaha",
       "url":"https://github.com/tapsystem/assistant-yamaha",
       "description":"Permet de contrôler un ampli / receiver Yamaha"
+    },
+    {
+      "name":"tram-nancy",
+      "url":"https://github.com/launay12u/assistant-tram-nancy",
+      "description":"Permet de connaitre les horaires du tram de Nancy"
     }
   ]
 }
