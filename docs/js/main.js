@@ -17,6 +17,7 @@ var store = new Vuex.Store({
 var headerVue = new Vue().$mount('#header');
 var contentVue = new Vue({
   data:{
+    TextField:"{{TextField}}",
     download:{
       text:"Télécharger",
       disabled:false
