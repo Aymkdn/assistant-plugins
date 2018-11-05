@@ -112,7 +112,12 @@ var onePlugin = (window.location.search.indexOf("?plugin=") !== -1);
 request(repoURL+'plugins.json?timestamp='+Date.now())
 .then(function(responseText) {
   var json = JSON.parse(responseText);
-  store.state.plugins=json.data.map(function(plugin) { plugin.selected=false; plugin.version=false; return plugin });
+  store.state.plugins=json.data.map(function(plugin) {
+    plugin.selected=false;
+    plugin.version=false;
+    plugin.author=plugin.url.split('/')[3];
+    return plugin;
+  });
   store.state.plugins.sort(function(a, b) {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;

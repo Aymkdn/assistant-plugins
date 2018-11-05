@@ -40,6 +40,10 @@
 ul > li > label + div {
   margin-left: 15px;
 }
+.page-header { padding:3rem 6rem }
+.page-header h3 { font-variant:small-caps; margin-bottom:0 }
+.page-header h3 a { color:#FFF; border-bottom:1px solid #1e6bb8 }
+.page-header h3 a:hover { text-decoration:none }
 
 /* pour assistant-freebox et assistant-livebox */
 #contenu.freebox #utilisation + p + p + ul > li > p,#contenu.livebox #utilisation + p + p + ul > li > p {
