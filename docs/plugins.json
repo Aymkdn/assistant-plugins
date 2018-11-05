@@ -59,6 +59,26 @@
       "name":"tram-nancy",
       "url":"https://github.com/launay12u/assistant-tram-nancy",
       "description":"Permet de connaitre les horaires du tram de Nancy"
+    },
+    {
+      "name":"deliveroo",
+      "url":"https://github.com/jzarca01/assistant-deliveroo",
+      "description":"Permet d'être tenu informé de l'état de la commande Deliveroo en cours"
+    },
+    {
+      "name":"lilo",
+      "url":"https://github.com/jzarca01/assistant-lilo",
+      "description":"Permet de gérer la lumière du potager d'intérieur « Lilo » de Prêt à Pousser"
+    },
+    {
+      "name":"franprix",
+      "url":"https://github.com/jzarca01/assistant-franprix",
+      "description":"Permet de consulter le solde de sa carte de fidélité Franprix"
+    },
+    {
+      "name":"foodcheri",
+      "url":"https://github.com/jzarca01/assistant-foodcheri",
+      "description":"Permet de suivre l'état de sa commande Foodchéri"
     }
   ]
 }
