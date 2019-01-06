@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.7 (6 Janvier 2019)**
+
+  - Fix un bug sur la ligne de commande introduite avec la v2.0.6
+
 **Change Log v2.0.6 (6 Janvier 2019)**
 
   - Il est maintenant possible d'utiliser `assistant-plugins` depuis une ligne de commande (https://github.com/Aymkdn/assistant-plugins/wiki/Utiliser-le-programme-en-ligne-de-commande)

@@ -4,7 +4,8 @@
 // Exemple : node assistant-cli.js "notifier_ceci est un message de test"
 
 var path = require("path");
-var configuration = require(path.join(__dirname,'configuration'));
+var dirname = '../../';
+var configuration = require(path.join(dirname,'configuration'));
 var plugins={}, addons=[], dependencies;
 function PromiseChain(arr, fct) {
   var dfd = Promise.resolve();
@@ -21,10 +22,10 @@ function PromiseChain(arr, fct) {
 plugins.assistant = {
   saveConfig:function(plugin, config) {
     if (plugin && config) {
-      var configuration = require(path.join(__dirname,'configuration'));
+      var configuration = require(path.join(dirname,'configuration'));
       configuration.plugins[plugin] = config;
       var jsonfile = require('jsonfile');
-      jsonfile.writeFile(path.join(__dirname, 'configuration.json'), configuration, {spaces: 2, EOL: '\r\n'}, function(err) {
+      jsonfile.writeFile(path.join(dirname, 'configuration.json'), configuration, {spaces: 2, EOL: '\r\n'}, function(err) {
         if (err) console.error("[assistant-"+plugin+"] Erreur lors de la sauvegarde de la configuration : "+err);
         else console.log("[assistant-"+plugin+"] Configuration sauvegardée.");
       })
@@ -33,19 +34,19 @@ plugins.assistant = {
 };
 
 // chargement des plugins
-dependencies = require(path.join(__dirname,"package")).dependencies;
+dependencies = require(path.join(dirname,"package")).dependencies;
 for (var plugin in dependencies) {
   if (plugin.startsWith("assistant-") && plugin !== "assistant-plugins") {
     addons.push(plugin.slice(10));
   }
 }
-var packageCurrent = require(path.join(__dirname,'/node_modules/assistant-plugins/package'));
+var packageCurrent = require(path.join(dirname,'/node_modules/assistant-plugins/package'));
 
 PromiseChain(addons, function(plugin) {
   plugin = plugin.trim();
-  var packagePlugin = require(path.join(__dirname,'/node_modules/assistant-'+plugin+'/package'));
+  var packagePlugin = require(path.join(dirname,'/node_modules/assistant-'+plugin+'/package'));
   console.log("[assistant] Chargement du plugin '"+plugin+"' (v"+packagePlugin.version+")");
-  return require(path.join(__dirname,'/node_modules/assistant-'+plugin)).init(configuration.plugins[plugin], plugins)
+  return require(path.join(dirname,'/node_modules/assistant-'+plugin)).init(configuration.plugins[plugin], plugins)
   .then(function(resource) {
     plugins[plugin] = resource;
   })
