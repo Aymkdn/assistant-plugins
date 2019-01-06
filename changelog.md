@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.6 (6 Janvier 2019)**
+
+  - Il est maintenant possible d'utiliser `assistant-plugins` depuis une ligne de commande (https://github.com/Aymkdn/assistant-plugins/wiki/Utiliser-le-programme-en-ligne-de-commande)
+
 **Change Log v2.0.5 (18 Août 2018)**
 
   - Ajout de la vérification d'erreur retournée par PushBullet
