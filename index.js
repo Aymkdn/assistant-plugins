@@ -73,19 +73,19 @@ exports.start = function(dirname) {
       })
     })
     .then(function() {
-      console.log("[assistant] Prêt à écouter les commandes via PushBullet");
+      console.log("[assistant] Connexion au flux de PushBullet...");
       awakePushBullet();
       setInterval(awakePushBullet, 86400000); // toutes les 24h
       // on écoute les notifications qui viennent de IFTTT via PushBullet
       // les commandes envoyées sont de type KEYWORD_ACTION1|KEYWORD_ACTION2|...
       var stream = pusher.stream();
       stream.connect();
-      stream.on('error', function(error) { console.log("[assistant-plugins] Erreur de connexion avec PushBullet: ",error) });
+      stream.on('error', function(error) { console.log("[assistant] Erreur de connexion avec PushBullet: ",error) });
       stream.on('tickle', function(tickle) {
         if (tickle==="push") {
           pusher.history({limit:1}, function(error, response) {
             if (error) {
-              console.log("[assistant-plugins] Erreur retournée par PushBullet: ",error);
+              console.log("[assistant] Erreur retournée par PushBullet: ",error);
             } else {
               response.pushes.forEach(function(push) {
                 if (push.sender_name === "IFTTT" && push.title === "Assistant" && !push.dismissed) {
@@ -107,6 +107,16 @@ exports.start = function(dirname) {
           })
         }
       })
+      stream.on('connect', function() {
+        console.log("[assistant] Connecté ! Prêt à exécuter les ordres.");
+      });
+      stream.on('close', function() {
+        console.log("[assistant] Le flux avec Pushbullet a été déconnecté... Tentative de reconnexion dans 30 secondes...");
+        setTimeout(function() {
+          console.log("[assistant] Reconnexion....");
+          stream.connect();
+        }, 10000);
+      });
     }).catch(function(err) {
       console.log(err)
     })

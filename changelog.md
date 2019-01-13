@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.8 (13 Janvier 2019)**
+
+  - Le flux avec PushBullet se reconnecte automatiquement en cas de perte de connexion (https://github.com/Aymkdn/assistant-plugins/issues/208)
+
 **Change Log v2.0.7 (6 Janvier 2019)**
 
   - Fix un bug sur la ligne de commande introduite avec la v2.0.6
