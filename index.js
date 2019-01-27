@@ -114,6 +114,7 @@ exports.start = function(dirname) {
         console.log("[assistant] Le flux avec Pushbullet a été déconnecté... Tentative de reconnexion dans 30 secondes...");
         setTimeout(function() {
           console.log("[assistant] Reconnexion....");
+          steam.close();
           stream.connect();
         }, 10000);
       });
