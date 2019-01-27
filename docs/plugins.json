@@ -79,6 +79,11 @@
       "name":"foodcheri",
       "url":"https://github.com/jzarca01/assistant-foodcheri",
       "description":"Permet de suivre l'état de sa commande Foodchéri"
+    },
+    {
+      "name":"kodi",
+      "url":"https://github.com/5AMsan/assistant-kodi",
+      "description":"Permet de commander le programme Kodi"
     }
   ]
 }
