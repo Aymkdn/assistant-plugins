@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.10 (28 Janvier 2019)**
+
+  - Typo dans le nom d'une variable
+
 **Change Log v2.0.9 (27 Janvier 2019)**
 
   - Après la perte du flux avec PushBullet, la reconnexion multiplie le nombre de commandes (https://github.com/Aymkdn/assistant-plugins/issues/215)
