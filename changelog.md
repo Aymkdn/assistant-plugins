@@ -1,5 +1,10 @@
 # Changelog
 
+**Change Log v2.0.11 (30 Janvier 2019)**
+
+  - La reconnexion à PushBullet devrait maintenant marcher correctement
+  - Ajout de timestamp dans la console
+
 **Change Log v2.0.10 (28 Janvier 2019)**
 
   - Typo dans le nom d'une variable

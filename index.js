@@ -33,6 +33,10 @@ exports.start = function(dirname) {
     });
   }
 
+  function timestamp() {
+    return new Intl.DateTimeFormat('fr-FR', {year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", second:"2-digit"}).format(new Date());
+  }
+
   if (!configuration.main.pushbullet_token) {
     console.log("[assistant] Erreur : vous devez configurer le token de PushBullet");
   } else {
@@ -90,14 +94,14 @@ exports.start = function(dirname) {
               response.pushes.forEach(function(push) {
                 if (push.sender_name === "IFTTT" && push.title === "Assistant" && !push.dismissed) {
                   var commandes = push.body.split("|");
-                  console.log("[assistant] Commande reçue: ",commandes);
+                  console.log("[assistant] ("+timestamp()+") Commande reçue: ",commandes);
                   PromiseChain(commandes, function(commande) {
                     // on regarde le keyword et on transmet au plug associé
                     var plugin = commande.split("_")[0];
                     if (!plugins[plugin]) {
-                      console.log("[assistant] Erreur : la commande « "+commande+" » a été reçue, cependant le plugin '"+plugin+"' n'a pas été chargé !");
+                      console.log("[assistant] ("+timestamp()+") Erreur : la commande « "+commande+" » a été reçue, cependant le plugin '"+plugin+"' n'a pas été chargé !");
                     } else {
-                      console.log("[assistant] Appel du plugin '"+plugin+"'");
+                      console.log("[assistant] ("+timestamp()+") Appel du plugin '"+plugin+"'");
                       return plugins[plugin].action(commande.split("_").slice(1).join("_"));
                     }
                   })
@@ -108,15 +112,10 @@ exports.start = function(dirname) {
         }
       })
       stream.on('connect', function() {
-        console.log("[assistant] Connecté ! Prêt à exécuter les ordres.");
+        console.log("[assistant] ("+timestamp()+") Connecté ! Prêt à exécuter les ordres.");
       });
       stream.on('close', function() {
-        console.log("[assistant] Le flux avec Pushbullet a été déconnecté... Tentative de reconnexion dans 30 secondes...");
-        setTimeout(function() {
-          console.log("[assistant] Reconnexion....");
-          stream.close();
-          stream.connect();
-        }, 10000);
+        console.log("[assistant] ("+timestamp()+") Le flux avec Pushbullet a été déconnecté... Tentative de reconnexion...");
       });
     }).catch(function(err) {
       console.log(err)
