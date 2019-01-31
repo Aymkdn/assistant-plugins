@@ -1,6 +1,6 @@
 {
   "name": "assistant-plugins",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Permet de gérer des plugins avec les Assistants (via IFTTT et Pushbullet)",
   "main": "index.js",
   "repository": "https://github.com/Aymkdn/assistant-plugins",

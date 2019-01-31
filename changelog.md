@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.12 (31 Janvier 2019)**
+
+  - Les vieilles versions de `node` ne supporte pas le timestamp dans sa forme actuelle, donc j'ai modifié pour s'adapter
+
 **Change Log v2.0.11 (30 Janvier 2019)**
 
   - La reconnexion à PushBullet devrait maintenant marcher correctement

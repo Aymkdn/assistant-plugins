@@ -34,7 +34,18 @@ exports.start = function(dirname) {
   }
 
   function timestamp() {
-    return new Intl.DateTimeFormat('fr-FR', {year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", second:"2-digit"}).format(new Date());
+    var now = new Date();
+    var month = now.getMonth()+1;
+    if (month < 10) month="0"+month;
+    var day = now.getDate()+1;
+    if (day < 10) day="0"+day;
+    var hours = now.getHours();
+    if (hours < 10) hours = hours="0"+hours;
+    var minutes = now.getMinutes();
+    if (minutes < 10) minutes = minutes="0"+minutes;
+    var seconds = now.getSeconds();
+    if (seconds < 10) seconds = seconds="0"+seconds;
+    return now.getFullYear()+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
   }
 
   if (!configuration.main.pushbullet_token) {
