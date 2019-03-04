@@ -1,5 +1,9 @@
 # Changelog
 
+**Change Log v2.0.13 (4 Mars 2019)**
+
+  - Gestion des déconnexions de PushBullet à cause de problèmes réseaux (par exemple *timeout*)
+
 **Change Log v2.0.12 (31 Janvier 2019)**
 
   - Les vieilles versions de `node` ne supportent pas le timestamp dans sa forme actuelle, donc j'ai modifié le code pour s'adapter

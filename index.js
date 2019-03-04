@@ -93,6 +93,7 @@ exports.start = function(dirname) {
       setInterval(awakePushBullet, 86400000); // toutes les 24h
       // on écoute les notifications qui viennent de IFTTT via PushBullet
       // les commandes envoyées sont de type KEYWORD_ACTION1|KEYWORD_ACTION2|...
+      var recoTimeout = null;
       var stream = pusher.stream();
       stream.connect();
       stream.on('error', function(error) { console.log("[assistant] Erreur de connexion avec PushBullet: ",error) });
@@ -123,10 +124,21 @@ exports.start = function(dirname) {
         }
       })
       stream.on('connect', function() {
+        if (recoTimeout) {
+          clearTimeout(recoTimeout);
+          recoTimeout=null;
+        }
         console.log("[assistant] ("+timestamp()+") Connecté ! Prêt à exécuter les ordres.");
       });
       stream.on('close', function() {
         console.log("[assistant] ("+timestamp()+") Le flux avec Pushbullet a été déconnecté... Tentative de reconnexion...");
+        // par défaut le module Pushbullet devrait se reconnecter tout seul
+        // mais parfois il n'y arrive pas, donc on reteste dans 1 minute
+        recoTimeout = setTimeout(function() {
+          console.log("[assistant] ("+timestamp()+") Reconnexion....");
+          stream.close();
+          stream.connect();
+        }, 60000);
       });
     }).catch(function(err) {
       console.log(err)
