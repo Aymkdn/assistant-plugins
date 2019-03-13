@@ -19,6 +19,8 @@ Voici concrètement comment cela fonctionne avec un exemple :
 
 L'opération peut paraître compliquée, mais elle s'exécute très rapidement et la mise en place est plutôt simple !
 
+<div class="important" style="font-size:1.2em">Tu cherches seulement à contrôler la <b>Freebox Révolution à la voix, mais sans rien installer ?</b> Alors regarde cet autre projet : <a href="https://assistant.kodono.info/freebox/">https://assistant.kodono.info/freebox/</a></div>
+
 ## ★ Installation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gmt4tIPH_fk?rel=0" frameborder="0" allowfullscreen></iframe>
