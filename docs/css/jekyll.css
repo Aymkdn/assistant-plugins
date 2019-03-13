@@ -65,3 +65,8 @@ ul > li > label + div {
   border-color: pink;
   font-family: inherit;
 }
+.important.message {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 5px;
+}

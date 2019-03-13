@@ -19,7 +19,7 @@ Voici concrètement comment cela fonctionne avec un exemple :
 
 L'opération peut paraître compliquée, mais elle s'exécute très rapidement et la mise en place est plutôt simple !
 
-<div class="important" style="font-size: 1em;padding: 10px;border-radius: 5px;">Tu cherches seulement à contrôler la <b>Freebox Révolution à la voix, mais sans rien installer ?</b> Alors regarde cet autre projet : <a href="https://assistant.kodono.info/freebox/">https://assistant.kodono.info/freebox/</a></div>
+<div class="important message">Tu cherches seulement à contrôler la <b>Freebox Révolution à la voix, mais sans rien installer ?</b> Alors regarde cet autre projet : <a href="https://assistant.kodono.info/freebox/">https://assistant.kodono.info/freebox/</a></div>
 
 ## ★ Installation
 
