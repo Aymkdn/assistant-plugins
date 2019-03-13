@@ -60,7 +60,7 @@ ul > li > label + div {
 }
 
 /* important message */
-pre.important {
+.important {
   background-color: #ffc0cb66;
   border-color: pink;
   font-family: inherit;
