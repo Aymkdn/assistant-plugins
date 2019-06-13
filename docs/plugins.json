@@ -84,6 +84,11 @@
       "name":"kodi",
       "url":"https://github.com/5AMsan/assistant-kodi",
       "description":"Permet de commander le programme Kodi"
+    },
+    {
+      "name":"rappel-calendrier",
+      "url":"https://github.com/Ybbet/assistant-rappel-calendrier",
+      "description":"Permet de faire parler un Google Home à partir d'un calendrier"
     }
   ]
 }
