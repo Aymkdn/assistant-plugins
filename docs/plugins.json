@@ -40,11 +40,11 @@
       "url":"https://github.com/Aymkdn/assistant-transport-montpellier",
       "description":"Permet de savoir quand les prochains trams/bus passent à un arrêt à Montpellier"
     },
-    {
+    /*{
       "name":"bluetooth",
       "url":"https://github.com/Aymkdn/assistant-bluetooth",
       "description":"Permet de connecter Google Home à une enceinte Bluetooth"
-    },
+    },*/
     {
       "name":"control-windows",
       "url":"https://github.com/Aymkdn/assistant-control-windows",
