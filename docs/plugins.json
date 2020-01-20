@@ -3,7 +3,7 @@
     {
       "name":"freebox",
       "url":"https://github.com/Aymkdn/assistant-freebox",
-      "description":"Permet de commander sa Freebox Révolution"
+      "description":"Permet de commander sa Freebox Révolution/Delta/One"
     },
     {
       "name":"livebox",
