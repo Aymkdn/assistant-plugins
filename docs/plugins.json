@@ -84,6 +84,11 @@
       "name":"rappel-calendrier",
       "url":"https://github.com/Ybbet/assistant-rappel-calendrier",
       "description":"Permet de faire parler un Google Home à partir d'un calendrier"
+    },
+    {
+      "name":"cityscoot",
+      "url":"https://github.com/jzarca01/assistant-cityscoot",
+      "description":"Permet de créer un radar qui vous informera au bout de x minutes s'il y a un scooter disponible dans un rayon paramétrable autour de votre position"
     }
   ]
 }
