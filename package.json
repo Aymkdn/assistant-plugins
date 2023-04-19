@@ -6,7 +6,7 @@
   "repository": "https://github.com/Aymkdn/assistant-plugins",
   "dependencies": {
     "promise": "^8.0.1",
-    "pushbullet": "^2.1.0",
+    "pushbullet": "^3.0.0",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
     "jsonfile": "^4.0.0"
